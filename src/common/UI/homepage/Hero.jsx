@@ -23,7 +23,7 @@ const Hero = () => {
         </div>
       </div>
         <div className="w-1/2">
-            <Image className="w-3/4"  src={Threed}  alt="..." />
+            <Image className="w-3/4" priority  src={Threed}  alt="..." />
         </div>
     </div>
   );
