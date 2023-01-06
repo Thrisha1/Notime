@@ -1,10 +1,11 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
 
+
 class AppDocument extends Document {
   static async getInitialProps(context) {
     const originalRenderPage = context.renderPage;
 
-    context.renderPage = () =>
+    context.renderPage = () => 
       originalRenderPage({
         enhanceApp: (App) => App,
         enhanceComponent: (Component) => Component,
@@ -19,7 +20,7 @@ class AppDocument extends Document {
     return (
       <Html>
         <Head></Head>
-        <body className="bg-p_back">
+        <body >
           <Main />
           <NextScript />
         </body>
