@@ -23,7 +23,7 @@ const Navbar = () => {
             <input
               type="text"
               id="search-navbar"
-              class="block w-full p-2 pl-5 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-blue-500 focus:border-blue-500 "
+              class="block w-full p-2 pl-5 text-sm text-gray-900 border border-gray-300 rounded-full bg-transparent focus:ring-blue-500 focus:border-blue-500 "
               placeholder="Search..."
             />
             <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
