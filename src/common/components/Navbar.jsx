@@ -9,9 +9,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav class="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded flex justify-between">
-      <div class="container flex flex-wrap items-center justify-between mx-auto">
-        <div className="flex">
+    <nav class="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5">
+      <div id="main-tab" class="flex w-full flex-wrap md:flex-nowrap md:justify-between md:px-7 ">
+        <div className="flex justify-center items-center">
           <a href="#" class="flex items-center">
             <Image
               src={Logo}
@@ -93,7 +93,7 @@ const Navbar = () => {
           </button>
         </div>
         <div
-          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          class="hidden w-full md:flex md:items-center md:justify-end md:w-auto md:order-1"
           id="navbar-search"
         >
           <div class="relative mt-3 md:hidden">
@@ -121,7 +121,7 @@ const Navbar = () => {
           </div>
           <ul
             id="navbar-open"
-            class="text-white flex bg-transparent justify-center items-center flex-col p-4 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  "
+            class="text-white flex bg-transparent justify-center items-center flex-col p-4 mt-4 border md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  "
           >
             <li>
               <a
