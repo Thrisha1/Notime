@@ -7,12 +7,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-/* 
-.text-patterner{
-	background-image: url('../../public/assets/text_background.jpg');
-    background-size: cover;
-    background-position: 300px 300px;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-} */
+
+#card_we{
+    background-image: url('../../public/assets/card-background.png')
+}
