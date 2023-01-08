@@ -7,7 +7,7 @@ import Middle from './Middle.jsx'
 
 const Home = () => {
   return (
-    <div>
+    <div className="w-full" >
       <Navbar/>
       <Hero/>
       <About/>
