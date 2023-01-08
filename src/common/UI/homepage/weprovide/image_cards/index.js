@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Cardbg from "../../../../../../public/assets/card-background.png"
+// import Cardbg from "../../../../../../public/assets/card-background.png"
 
 
 function index({name,img}) {
