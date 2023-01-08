@@ -1,7 +1,8 @@
 import React from 'react'
 import Navbar from '../../components/Navbar.jsx'
+import WeProvide from './weprovide/indexx.js'
 import Hero from './Hero.jsx'
-import About from '../about/About.jsx'
+import About from './about/About.jsx'
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <Navbar/>
       <Hero/>
       <About/>
+      <WeProvide/>
     </div>
   )
 }
