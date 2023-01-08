@@ -9,8 +9,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav class="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5">
-      <div id="main-tab" class="flex w-full flex-wrap md:flex-nowrap md:justify-between md:px-7 ">
+    <nav class="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 w-full">
+      <div id="main-tab" class="flex w-full flex-wrap md:flex-nowrap justify-between md:px-7 ">
         <div className="flex justify-center items-center">
           <a href="#" class="flex items-center">
             <Image

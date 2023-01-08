@@ -17,7 +17,7 @@ const Hero = () => {
           <p className="text-lg font-bold text-teal-400">
             An Interesting play for a better tomorrow
           </p>
-          <button className="bg-gray-300  text-dark tracking-widest font-bold  px-7 py-3 rounded-lg my-10">
+          <button className="bg-gray-300 py-6  text-dark tracking-widest font-bold  px-7 rounded-lg my-10">
             KNOW MORE
           </button>
         </div>
