@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Standingboy from "../../../../public/assets/standingboy.png"
+import Standingboy from "../../../../public/assets/Standingboy.png"
 
 const Middle = () => {
   return (
