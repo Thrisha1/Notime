@@ -6,7 +6,7 @@ import Cardbg from "../../../../../../public/assets/card-background.png"
 function index({name,img}) {
   return (
 
-    <div class="relative flex justify-center  max-w-sm h-full rounded-3xl shadow-md">
+    <div class="relative flex justify-center  max-w-sm h-full rounded-3xl shadow-md bg-transparent">
 
       <Image
 
@@ -14,9 +14,9 @@ function index({name,img}) {
         alt="Picture of the author"
         width={500}
         height={500}
-        className=""
+        className=" hover:bg-gray-900 rounded-[35px]"
       />
-      <Image src={img} className="absolute top-10" alt="" />
+      <Image src={img} className="absolute top-10 hover:rotate-45" alt="" />
       <div className="absolute top-1/2 h-full text-center ">
           <button className="text-white text-3xl tracking-[10px] font-bold">
             {name}
