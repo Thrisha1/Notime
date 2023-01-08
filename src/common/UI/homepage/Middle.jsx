@@ -1,13 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import Standingboy from "../../../../public/assets/standingboy.png";
-import Cardbg from "../../../../public/assets/card-background.png"
 
 const Middle = () => {
   return (
     <div className="flex w-full">
       <div className="flex w-1/2 items-center justify-center">
-        <Image src={Standingboy} className="" />
+        <Image src={Standingboy} className="" alt="" />
       </div>
       <div className="w-1/2 flex flex-col  px-20 text-white items-center justify-center ">
         <p>
