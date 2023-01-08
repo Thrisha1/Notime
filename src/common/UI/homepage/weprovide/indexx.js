@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Reactimg from "../../../../../public/assets/reactimg.png";
-import Weprovide from "../../../components/We_provide";
+import Weprovide from "./image_cards";
 import Intership from "../../../../../public/assets/internship.png";
 import Jobs from "../../../../../public/assets/jobs.png";
 
