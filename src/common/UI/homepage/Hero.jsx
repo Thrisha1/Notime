@@ -17,7 +17,7 @@ const Hero = () => {
           <p className="text-lg font-bold text-teal-400">
             An Interesting play for a better tomorrow
           </p>
-          <button className="bg-gray-300 py-6 md:py-3  text-dark tracking-widest font-bold  px-7 rounded-lg my-10 md:my-7">
+          <button className="bg-gray-300 py-6 md:py-3  text-dark tracking-widest font-bold  px-7 rounded-lg my-10 md:my-7 hover:bg-gradient-to-r from-purple-900 via-purple-700 to-blue-500">
             KNOW MORE
           </button>
         </div>
