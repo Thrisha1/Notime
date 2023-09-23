@@ -1,7 +1,7 @@
 import React from "react";
 import StarsCollect from "./StarsCollect";
 
-const CourseCard = () => {
+const CourseCard = ({num}) => {
   return (
     <div class="w-full max-w-sm  border  rounded-lg shadow bg-gray-800 border-gray-700">
       <a href="#">
@@ -14,7 +14,7 @@ const CourseCard = () => {
       <div class="px-5 pb-5">
         <a href="#">
           <h5 class="text-xl font-semibold tracking-tight text-white">
-            React Developer
+            React Developer {num}
           </h5>
         </a>
         <StarsCollect />

@@ -21,13 +21,13 @@ export default function SwipeCards() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <CourseCard />
+          <CourseCard num="1" />
         </SwiperSlide>
         <SwiperSlide>
-          <CourseCard />
+          <CourseCard num="2" />
         </SwiperSlide>
         <SwiperSlide>
-          <CourseCard />
+          <CourseCard num="3" />
         </SwiperSlide>
       </Swiper>
     </>
