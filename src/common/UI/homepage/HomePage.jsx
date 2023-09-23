@@ -4,6 +4,7 @@ import WeProvide from './weprovide/indexx.js'
 import Hero from './Hero.jsx'
 import About from './about/About.jsx'
 import Middle from './Middle.jsx'
+import Footer from '../../components/Footer.jsx'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <About/>
       <WeProvide/>
       <Middle/>
+      <Footer/>
     </div>
   )
 }
