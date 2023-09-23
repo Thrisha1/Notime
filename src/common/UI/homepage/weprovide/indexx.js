@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 import Reactimg from "../../../../../public/assets/reactimg.png";
 import Weprovide from "./image_cards";
 import Intership from "../../../../../public/assets/internship.png";
@@ -17,7 +18,9 @@ function Test() {
         </h1>
       </div>
       <div className="flex flex-col flex-wrap md:flex-row gap-10 px-8 w-full justify-center items-center">
-        <Weprovide name="COURSES" img={Reactimg} />
+          <Link href="/courses">
+            <Weprovide link="/courses" name="COURSES" img={Reactimg} />
+          </Link>
         <Weprovide name="INTERNSHIP" img={Intership} />
         <Weprovide name="JOBS" img={Jobs} />
       </div>
