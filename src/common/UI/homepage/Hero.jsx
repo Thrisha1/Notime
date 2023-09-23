@@ -46,7 +46,7 @@ const Hero = () => {
             TIME
           </h1>
           <p className=" bg-clip-text  text-transparent bg-gradient-to-r from-indigo-800 via-pink-500 to-teal-400  font-bold text-2xl md:text-3xl my-10 tracking-widest">
-            COURSES TO <br className="hidden md:flex" /> LEARN AND EARN
+            COURSES TO <br className="hidden md:flex" /> LEARN
           </p>
           <div className="flex gap-x-2 w-full">
             <span
