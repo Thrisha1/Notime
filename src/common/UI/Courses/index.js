@@ -30,7 +30,7 @@ const index = () => {
       <Courselist name="NEXT JS" img={next} para="Introduction to Next JS, a framework of React" />
       </Link>
       <Link href="/registration">
-      <Courselist name="DJANGO"  img={django} para="Indroduction to django , a high-level Python web framework that enables rapid development of secure and maintainable websites  "/>
+      <Courselist name="DJANGO"  img={django} para="Indroduction to django, a Python web framework that enables rapid development of secure and maintainable websites  "/>
       </Link>
       </div> 
       

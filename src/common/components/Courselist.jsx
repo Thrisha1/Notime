@@ -3,17 +3,14 @@ import Image from 'next/image';
 
 function Courselist({ name, img, para }) {
   return (
-    <div>
-      <div className="flex flex-col justify-center items-center  rounded-3xl bg-transparent bg-white w-full h-60 bg-opacity-[20%] ">
-
-        <Image src={img} className="w-[233px] h-[211px] absolute  mt-[3px]  lg:mr-[27rem] sm:mr-[22rem] rounded-3xl  " alt={name} />
-        <div className="flex flex-col ml-3 mt-5 lg:gap-0 ">
-          <p className="font-montserrat text-[24px] font-semibold leading-29 tracking-wider ml-[18rem]  text-white  mb-[1rem]">{name}</p>
-          <p className="font-sans text-base font-semibold leading-tight tracking-tight ml-[18rem] text-[#94a3b8] ">{para}</p>
-          <button className=" text-[20px] sm:text-2xl  sm:tracking-[10px] ml-[290px]  w-[200px] bg-gray-300 py-6 md:py-3  text-dark  font-bold rounded-lg my-10 md:my-7  ">REGISTER
+      <div className="w-full px-6 flex flex-col xs:flex-row justify-center py-4  items-center  rounded-3xl bg-transparent bg-white w-full xs:h-44 md:h-60 bg-opacity-[20%] ">
+        <Image width={100} height={100} src={img} className=" w-32 h-28 md:h-44 md:w-44 rounded-3xl " alt={name} />
+        <div className="flex h-28 md:h-44 justify-around items-center xs:items-start flex-col ml-5 md:ml-10 text-sm text-white font-monospace gap-y-2">
+          <p className="text-lg md:text-xl font-semibold tracking-widest">{name}</p>
+          <p className="text-xs md:text-sm">{para}</p>
+          <button className="bg-white text-black w-24 text-xs md:text-normal md:w-32  py-2 rounded-lg tracking-widest">REGISTER
           </button>
         </div>
-      </div>
     </div>
   );
 }
