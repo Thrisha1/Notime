@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Threed from "../../../../public/assets/3d1.png";
 import tilter from "../../../../public/assets/3d3.png";
 import { motion } from "framer-motion";
@@ -57,9 +58,9 @@ const Hero = () => {
               {contents[contentIndex]}
             </span>
           </div>
-          <button className="bg-gray-300 py-6 md:py-3  text-dark tracking-widest font-bold  px-7 rounded-lg my-10 md:my-7">
-            KNOW MORE
-          </button>
+          <Link href="/registration"  className="bg-gray-300 py-3  text-dark tracking-widest font-bold  px-7 rounded-lg my-10 md:my-7">
+            Register Now
+          </Link>
         </div>
       </div>
       <div className="w-1/2">
