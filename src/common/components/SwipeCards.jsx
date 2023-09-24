@@ -1,19 +1,13 @@
 import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
-
-// import required modules
 import { EffectCards } from "swiper/modules";
-import StarsCollect from "./StarsCollect";
 import CourseCard from "./CourseCard";
-
-//import required images
-import img from "../../../public/swiper-img/nextjs.png";
-
+import img1 from "../../../public/assets/react-img.png";
+import img2 from "../../../public/assets/next.png";
+import img3 from "../../../public/assets/django.png";
+import img4 from "../../../public/assets/htmlcssjs1.png";
 export default function SwipeCards() {
   return (
     <>
@@ -24,16 +18,16 @@ export default function SwipeCards() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <CourseCard num="1" img={img} name="React JS" prize="₹499"/>
+          <CourseCard num="1" img={img1} name="React JS" prize="₹499"/>
         </SwiperSlide>
         <SwiperSlide>
-          <CourseCard num="2" img={img} name="Next JS" prize="₹499" />
+          <CourseCard num="2" img={img2} name="Next JS" prize="₹499" />
         </SwiperSlide>
         <SwiperSlide>
-          <CourseCard num="3" img={img} name="Django" prize="₹499"/>
+          <CourseCard num="3" img={img3} name="Django" prize="₹499"/>
         </SwiperSlide>
         <SwiperSlide>
-          <CourseCard num="4" img={img} name="HTML/CSS/JavaScript" prize="₹499" />
+          <CourseCard num="4" img={img4} name="HTML/CSS/JavaScript" prize="₹499" />
         </SwiperSlide>
       </Swiper>
     </>

@@ -17,9 +17,9 @@ const Middle = () => {
           </span>
         </h1>
         <SwipeCards/>
-        <button className="border-2 border-white self-start self-center my-10 bg-white hover:bg-blue-200 fond-bold rounded-lg text-black px-10 py-2.5 ml-0 w-max  hover:text-white hover:bg-gradient-to-r from-purple-900 via-purple-700 to-blue-500 font-semibold tracking-widest">
-          EXPLORE MORE
-        </button>
+        {/*<button className="border-2 border-white self-start self-center my-10 bg-white hover:bg-blue-200 fond-bold rounded-lg text-black px-10 py-2.5 ml-0 w-max  hover:text-white hover:bg-gradient-to-r from-purple-900 via-purple-700 to-blue-500 font-semibold tracking-widest">*/}
+        {/*  EXPLORE MORE*/}
+        {/*</button>*/}
       </div>
     </div>
   );
