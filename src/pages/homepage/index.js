@@ -1,11 +1,10 @@
 import React from "react";
-import Courses from "../../common/UI/Courses";
+import HomePage from '../../common/UI/homepage/HomePage.jsx';
 
 const index = () => {
   return (
     <div>
-      
-      {<Courses />}
+      {<HomePage />}
     </div>
   );
 };
