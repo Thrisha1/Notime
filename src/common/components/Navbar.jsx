@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Logo from "../../../public/logo.png";
-
+import Link from "next/link";
 const Navbar = () => {
   const opener = () => {
     const navbar = document.getElementById("navbar-search");
@@ -77,29 +77,29 @@ const Navbar = () => {
             class="text-white flex bg-transparent justify-center items-center flex-col p-4 mt-4 border md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  "
           >
             <li>
-              <a
-                href="#"
-                class="block py-2  rounded hover:underline md:bg-transparent md:p-0"
-                aria-current="page"
-              >
-                Home
-              </a>
+             <Link href="/homepage" class="block py-2   rounded hover:underline md:hover:bg-transparent  ">
+              Home
+             </Link>
             </li>
             <li>
-              <a
-                href="#"
-                class="block py-2   rounded hover:underline md:hover:bg-transparent "
-              >
-                Why Notime?
-              </a>
+             <Link href="/about" class="block py-2   rounded hover:underline md:hover:bg-transparent ">
+              About
+             </Link>
+            </li>
+            <li> 
+             <Link href="/courses" class="block py-2   rounded hover:underline md:hover:bg-transparent ">
+              Courses
+             </Link>
+            </li>
+            <li>             
+             <Link href="/registration" class="block md:py-2 bg-white px-3 py-1 text-black   rounded hover:underline md:hover:bg-transparent hover:text-white ">
+              Registration
+             </Link>
             </li>
             <li>
-              <a
-                href="#"
-                class="block py-2   rounded hover:underline md:hover:bg-transparent "
-              >
-                Contact Us
-              </a>
+             <Link href="/contact" class="block md:py-2 bg-white px-3 py-1 text-black   rounded hover:underline md:hover:bg-transparent hover:text-white ">
+              Contact
+             </Link>
             </li>
             {/* <li>
               <a
