@@ -77,7 +77,7 @@ const Navbar = () => {
             class="text-white flex bg-transparent justify-center items-center flex-col p-4 mt-4 border md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  "
           >
             <li>
-             <Link href="/homepage" class="block py-2   rounded hover:underline md:hover:bg-transparent  ">
+             <Link href="/" class="block py-2   rounded hover:underline md:hover:bg-transparent  ">
               Home
              </Link>
             </li>

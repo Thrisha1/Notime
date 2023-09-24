@@ -1,7 +1,10 @@
 import React, { useState , useEffect } from "react";
+import Image from "next/image"
 import { useForm } from "react-hook-form";
 import Airtable from 'airtable';
 import { useRouter } from "next/router";
+import Navbar from "../../common/components/Navbar";
+import Feature from "../../common/components/Feature"
 
 
 const Index = () => {
@@ -41,8 +44,36 @@ const Index = () => {
         });
     }
     return (
-        <div>
-            <section class="bg-transparent py-12">
+        <div className="overflow-x-hidden">
+            <Navbar/>
+            <div className="flex">
+            <div className="md:w-1/2  flex items-start justify-between md:ml-10 md:mt-32">
+                <div className="w-full md:flex hidden rounded-lg shadow bg-gray-600 bg-opacity-50">
+                    <div>
+
+                    <Image className="p-8 rounded-t-lg h-60" width={300} height={100} src="/assets/htmlcssjs1.png" alt="product image"/>
+                        <div className="flex flex-col w-full items-center justify-center pb-4">
+                        <span className="text-3xl pb-4 font-bold text-gray-900 dark:text-white">$599</span>
+                        <span
+                            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register for Course</span>
+                        </div>
+                    </div>
+
+                        <div className='flex flex-col gap-2 text-white items-center justify-center '>
+
+                            <div className='flex flex-col gap-3'>
+                                <Feature point="15 hours hands-on practice" />
+                                <Feature point="Experienced mentors" />
+                                <Feature point="Real-World Projects"/>
+                                <Feature point="Personalized Learning"/>
+                                <Feature point="Practical Workshops"/>
+                                <Feature point="Skill Assessments"/>
+                                <Feature point="Certificate of completion"/>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <section class="bg-transparent py-12 w-full md:w-1/2">
                 <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
                     {/* <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                         <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo" />
@@ -86,12 +117,14 @@ const Index = () => {
                                     <label for="github" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Github URL</label>
                                     <input {...register("github")} type="text" name="github" id="github" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://github.com/"  />
                                 </div>
-                                <button type="submit" class="w-full text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center">Enroll Now</button>
+                                <button type="submit" class="w-full bg-white text-black font-medium rounded-lg text-sm px-5 py-2.5 text-center">Enroll Now</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </section>
+
+            </div>
 
             {/* success model */}
             {
