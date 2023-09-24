@@ -4,7 +4,7 @@ import Courses from "../../common/UI/Courses";
 const index = () => {
   return (
     <div>
-      {/*<Courses />*/}
+      <Courses />
     </div>
   );
 };
