@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
+import Link from 'next/link'
 import Navbar from "../../../common/components/Navbar.jsx"
 import Stars from "./Stars.jsx"
 import Tick from './Tick.jsx'
+import Feature from "../../../common/components/Feature";
 
 const index = () => {
   return (
@@ -61,63 +63,22 @@ const index = () => {
               </div>
 
               {/* course card */}
-              <div class="w-full max-w-sm rounded-lg shadow bg-gray-600 bg-opacity-50">
-                <img class="p-8 rounded-t-lg" src="/assets/htmlcssjs1.png" alt="product image" />
-                <div class="px-5 pb-5">
+              <div className="w-full max-w-sm rounded-lg shadow bg-gray-600 bg-opacity-50">
+                <Image width={500} height={100} className="p-8 rounded-t-lg" src="/assets/htmlcssjs1.png" alt="product image" />
+                <div className="px-5 pb-5">
 
                   <div className='flex flex-col gap-2'>
-                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                    <span class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register for Course</span>
-                    <span class="mt-8 text-xl font-bold text-gray-900 dark:text-white">This Course will include : </span>
+                    <span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+                    <Link href="/registration" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register for Course</Link>
+                    <span className="mt-8 text-xl font-bold text-gray-900 dark:text-white">This Course will include : </span>
                     <div className='flex flex-col gap-3'>
-                      <div class="course-point flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-                        15 hours hands-on practice
-                      </div>
-                      <div class="course-point flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-
-                        Experienced mentors
-                      </div>
-                      <div class="course-point flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-
-                        Real-World Projects
-                      </div>
-                      <div class="course-point flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-
-                        Personalized Learning
-                      </div>
-                      <div class="course-point flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-
-                        Practical Workshops
-                      </div>
-                      <div class="course-point flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-
-                        Skill Assessments
-                      </div>
-                      <div class="course-point flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-
-                        Certificate of completion
-                      </div>
+                      <Feature point="15 hours hands-on practice" />
+                      <Feature point="Experienced mentors" />
+                      <Feature point="Real-World Projects"/>
+                      <Feature point="Personalized Learning"/>
+                      <Feature point="Practical Workshops"/>
+                      <Feature point="Skill Assessments"/>
+                      <Feature point="Certificate of completion"/>
                     </div>
                   </div>
                 </div>
