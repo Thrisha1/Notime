@@ -92,7 +92,7 @@ const Navbar = () => {
              </Link>
             </li>
             <li>             
-             <Link href="/registration" class="block md:py-2 bg-white px-3 py-1 text-black   rounded hover:underline md:hover:bg-transparent hover:text-white ">
+             <Link href="/registration" class="block md:py-2 bg-white px-3 py-1 my-3 text-black   rounded hover:underline md:hover:bg-transparent hover:text-white ">
               Registration
              </Link>
             </li>
