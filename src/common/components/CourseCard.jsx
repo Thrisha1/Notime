@@ -4,7 +4,7 @@ import Link from "next/link";
 import StarsCollect from "./StarsCollect";
 const CourseCard = ({name,img,prize}) => {
   return (
-    <div className="w-full max-w-sm  border  rounded-lg shadow bg-gray-800 border-gray-700">
+    <div className="w-full max-w-sm  border  rounded-lg shadow bg-white border-gray-700 text-black">
       <a href="#">
       <Image
           class="p-8 rounded-t-lg"
@@ -14,13 +14,13 @@ const CourseCard = ({name,img,prize}) => {
       </a>
       <div className="px-5 pb-5">
         <a href="#">
-          <h5 className="text-xl font-semibold tracking-tight text-white">
+          <h5 className="text-xl font-semibold tracking-tight ">
           {name}  
           </h5>
         </a>
         <StarsCollect />
         <div className="flex items-center justify-between">
-          <span className="text-3xl font-bold text-white">
+          <span className="text-3xl font-bold ">
           {prize}
           </span>
           <Link
