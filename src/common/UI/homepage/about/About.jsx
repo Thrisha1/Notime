@@ -9,9 +9,9 @@ function About() {
           of their time. Our platform provides a flexible and convenient
           learning experience, allowing individuals of all backgrounds and
           schedules to access practical skills that can be applied in real life.
-          With NoTime, you'll not only learn but also earn rewards as you
+          With NoTime, you wll not only learn but also earn rewards as you
           progress, keeping you motivated on your educational journey. Our
-          vibrant learning community ensures you're never alone on this path, as
+          vibrant learning community ensures you are never alone on this path, as
           you collaborate and grow together with fellow learners and expert
           instructors. Join us at NoTime, where you can unlock your true
           potential, advance your career, and seize every moment.
