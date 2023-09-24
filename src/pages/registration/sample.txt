@@ -1,6 +1,32 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 
 const Index = () => {
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const onSubmit = data => {
+        // send a post request to https://hooks.airtable.com/workflows/v1/genericWebhook/app6CHsYoG1ehpXei/wflCfP3aRTF6413Ui/wtrq4lBcwciRAlFl6
+        // with data as body
+        console.log(data);
+        fetch('https://hooks.airtable.com/workflows/v1/genericWebhook/app6CHsYoG1ehpXei/wflCfP3aRTF6413Ui/wtrq4lBcwciRAlFl6', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+        }).then(res => {
+            console.log(res);
+            if (res.status === 200) {
+                alert("You have been successfully enrolled for the course");
+            } else {
+                alert("Something went wrong. Please try again later");
+            }
+        }
+        ).catch(err => {
+            console.log(err);
+            alert("Something went wrong. Please try again later");
+        }
+        );
+    }
     return (
         <div>
             <section class="bg-transparent py-12">
