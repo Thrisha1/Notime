@@ -1,25 +1,26 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import StarsCollect from "./StarsCollect";
 const CourseCard = ({name,img,prize}) => {
   return (
-    <div class="w-full max-w-sm  border  rounded-lg shadow bg-gray-800 border-gray-700">
+    <div className="w-full max-w-sm  border  rounded-lg shadow bg-gray-800 border-gray-700">
       <a href="#">
-      <img
+      <Image
           class="p-8 rounded-t-lg"
           src={img}
           alt="product image"
         />
       </a>
-      <div class="px-5 pb-5">
+      <div className="px-5 pb-5">
         <a href="#">
-          <h5 class="text-xl font-semibold tracking-tight text-white">
+          <h5 className="text-xl font-semibold tracking-tight text-white">
           {name}  
           </h5>
         </a>
         <StarsCollect />
-        <div class="flex items-center justify-between">
-          <span class="text-3xl font-bold text-white">
+        <div className="flex items-center justify-between">
+          <span className="text-3xl font-bold text-white">
           {prize}
           </span>
           <Link

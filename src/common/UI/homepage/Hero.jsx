@@ -28,7 +28,7 @@ const Hero = () => {
       updateContent();
     }, 3200);
     return () => clearInterval(interval);
-  }, []);
+  }, );
 
   const updateContent = () => {
     setContentIndex((prevIndex) => (prevIndex + 1) % contents.length);
