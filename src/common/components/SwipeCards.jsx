@@ -12,10 +12,10 @@ import StarsCollect from "./StarsCollect";
 import CourseCard from "./CourseCard";
 
 //import required images
-import img1 from "../../../public/assest/react.png";
-import img2 from "../../../public/swiper-img/nextjs.png";
-import img3 from "../../../public/assets/python.png";
-import img4 from "../../../public/assets/html.png";
+import img1 from "../../../public/assets/react.png";
+import img2 from "../../../public/assets/next.png";
+import img3 from "../../../public/assets/django.png";
+import img4 from "../../../public/assets/htmlcssjs1.png";
 export default function SwipeCards() {
   return (
     <>
@@ -25,7 +25,7 @@ export default function SwipeCards() {
         modules={[EffectCards]}
         className="mySwiper"
       >
-        <SwiperSlide className="bg-white bg-opacity-50">
+        <SwiperSlide>
           <CourseCard num="1" img={img1} ame="React JS" prize="₹499"/>
         </SwiperSlide>
         <SwiperSlide>
