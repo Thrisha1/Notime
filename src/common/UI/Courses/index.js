@@ -12,18 +12,20 @@ const index = () => {
   return (
     <div>
       <Navbar />
-      <p className=" bg-clip-text  text-white   font-bold text-2xl md:text-3xl my-10 tracking-widest ml-[42px] mt-[50px]">
+      <p className=" bg-clip-text  text-white   font-bold text-2xl md:text-3xl my-10 tracking-widest ml-[42px] mt-[50px] ">
             our Courses 
       </p>
-      <div className="flex flex-row ml-[45px] gap-7">
+     
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-7 mx-10  gap-5 ">
+        
        <Link href="/registration"> 
       <Courselist name="HTML/CSS/JS" img={htmlcssjs} para="Introduction to HTML,CSS,JS, main languages to build website" />
       </Link>
       <Link href="/registration">
       <Courselist name="REACT JS" img={reactimg} para="Introduction to React JS, a library for building UI components" />
       </Link>
-        </div>
-        <div className="flex flex-row ml-[45px] gap-7">
+      
+        
       <Link href="/registration">   
       <Courselist name="NEXT JS" img={next} para="Introduction to Next JS, a framework of React" />
       </Link>
@@ -31,8 +33,11 @@ const index = () => {
       <Courselist name="DJANGO"  img={django} para="Indroduction to django , a high-level Python web framework that enables rapid development of secure and maintainable websites  "/>
       </Link>
       </div> 
+      
       <Footer/>
     </div>
+    
+    
   );
 };
 
