@@ -10,6 +10,15 @@ body{
 
 #card_we{
     background-image: url('../../public/assets/card-background.png')
+
+}
+#coursebg{
+  background-image: url('../../public/assets/coursecardbg.png');
+  width: 680px;
+  height: 260px;
+  
+
+  
 }
 
 /* swiper cards */
@@ -45,3 +54,4 @@ body{
       width: 100%;
     }
   }
+  
