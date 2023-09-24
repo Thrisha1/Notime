@@ -1,18 +1,22 @@
 import React from "react";
+import Navbar from "../../common/components/Navbar";
+import Registration from "../../common/UI/registration";
 
 const Index = () => {
     return (
-        <div>
-            {/*<Courses />*/}
-            <iframe
-                className="airtable-embed"
-                src="https://airtable.com/embed/app6CHsYoG1ehpXei/shr6X0LRdOp2Ad9NC?backgroundColor=grayDusty"
-                frameBorder="0"
-                onWheel={() => {}} // You can handle mouse wheel events here if needed
-                width="100%"
-                height="533"
-                style={{ background: "transparent", border: "1px solid #ccc" }}
-            ></iframe>
+        <div className="w-full">
+            <Navbar />
+            <h1>Registration</h1>
+            <div className="flex w-full justify-between">
+                <div className="w-1/2">
+                    <h1>Registration</h1>
+
+                </div>
+                <div className="w-1/2">
+                    <Registration />
+                </div>
+            </div>
+
         </div>
     );
 };
