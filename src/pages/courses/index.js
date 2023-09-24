@@ -3,7 +3,7 @@ import Courses from "../../common/UI/Courses";
 
 const index = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       
      <Courses />
     </div>
