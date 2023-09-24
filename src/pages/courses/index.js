@@ -5,7 +5,7 @@ const index = () => {
   return (
     <div>
       
-      {<Courses />}
+     <Courses />
     </div>
   );
 };
