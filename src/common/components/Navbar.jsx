@@ -77,7 +77,7 @@ const Navbar = () => {
             class="text-white flex bg-transparent justify-center items-center flex-col p-4 mt-4 border md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  "
           >
             <li>
-             <Link href="#" class="block py-2   rounded hover:underline md:hover:bg-transparent ">
+             <Link href="/homepage" class="block py-2   rounded hover:underline md:hover:bg-transparent  ">
               Home
              </Link>
             </li>
@@ -92,12 +92,12 @@ const Navbar = () => {
              </Link>
             </li>
             <li>             
-             <Link href="/registration" class="block md:py-2 bg-white px-3 py-1 text-black   rounded hover:underline md:hover:bg-transparent ">
+             <Link href="/registration" class="block md:py-2 bg-white px-3 py-1 text-black   rounded hover:underline md:hover:bg-transparent hover:text-white ">
               Registration
              </Link>
             </li>
             <li>
-             <Link href="/contact" class="block md:py-2 bg-white px-3 py-1 text-black   rounded hover:underline md:hover:bg-transparent ">
+             <Link href="/contact" class="block md:py-2 bg-white px-3 py-1 text-black   rounded hover:underline md:hover:bg-transparent hover:text-white ">
               Contact
              </Link>
             </li>
