@@ -7,7 +7,9 @@ const CourseCard = ({name,img,prize}) => {
     <div className="w-full max-w-sm  border  rounded-lg shadow bg-white border-gray-700 text-black">
       <a href="#">
       <Image
-          class="p-8 rounded-t-lg"
+          width={100}
+          height={100}
+          className="object-cover p-8 rounded-t-lg w-32"
           src={img}
           alt="product image"
         />
