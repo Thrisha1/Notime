@@ -24,7 +24,7 @@ const index = () => {
                 </div>
                 <div>
                   <div class="p-4 rounded-lg md:p-8 bg-gray-600 bg-opacity-50" id="about" role="tabpanel" aria-labelledby="about-tab">
-                    <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">What you'll learn</h2>
+                    <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">What you will learn</h2>
                     <ul role="list" class="space-y-4 text-gray-500 dark:text-gray-400">
                       <li class="flex space-x-2 items-center">
                         <Tick />
@@ -91,7 +91,7 @@ const index = () => {
             <header class="mb-4 lg:mb-6">
               <address class="flex flex-wrap items-center lg:justify-start justify-center gap-6 mb-6 not-italic">
                 <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                  <img class="mr-4 w-16 h-16 rounded-full" src="/assets/me.jpg" alt="Jese Leos" />
+                  <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full" src="/assets/me.jpg" alt="Jese Leos" />
                   <div>
                     <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Muhammed Rinshad S R</a>
                     <p class="text-base text-gray-500 dark:text-gray-400">Web Designer and Developer</p>
@@ -101,7 +101,7 @@ const index = () => {
                   </div>
                 </div>
                 <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                  <img class="mr-4 w-16 h-16 rounded-full" src="/assets/thrisha.jpg" alt="Jese Leos" />
+                  <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full" src="/assets/thrisha.jpg" alt="Jese Leos" />
                   <div>
                     <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Thrisha K</a>
                     <p class="text-base text-gray-500 dark:text-gray-400">Web Designer and Developer</p>
