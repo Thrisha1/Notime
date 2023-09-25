@@ -4,9 +4,9 @@ import Navbar from "../../common/components/Navbar";
 
 const index = () => {
   return (
-    <div className="overflow-x-hidden h-screen">
+    <div className="overflow-hidden h-screen">
      <Navbar/>
-    <div className="flex items-center justify-center w-full h-full">
+    <div className="flex  justify-center w-full h-full">
       <section className="md:bg-white bg-opacity-20 w-max">
         <div className="py-8 px-4 mx-auto max-w-screen-md">
           <h2 className="mb-4 text-2xl md:text-4xl tracking-tight font-extrabold text-center text-gray-300">Contact
