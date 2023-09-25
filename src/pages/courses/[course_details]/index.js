@@ -68,7 +68,7 @@ const index = () => {
                 <div className="px-5 pb-5">
 
                   <div className='flex flex-col gap-2'>
-                    <span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+                    <span className="text-3xl font-bold text-gray-900 dark:text-white">$499</span>
                     <Link href="/registration" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register for Course</Link>
                     <span className="mt-8 text-xl font-bold text-gray-900 dark:text-white">This Course will include : </span>
                     <div className='flex flex-col gap-3'>

@@ -19,7 +19,7 @@ function Courselist({ name, img, para, state }) {
               } className={` bg-white text-center text-black w-24 text-xs md:text-normal md:w-32  py-2 rounded-lg tracking-widest`}>REGISTER
               </button>
             ):(
-                <button className={`opacity-70 bg-white text-center text-black w-24 text-xs md:text-normal md:w-32  py-2 rounded-lg tracking-widest`}>COMING SOON</button>
+                <button className={`opacity-70 bg-white text-center text-black w-24 text-xs md:text-normal md:w-32  py-2 px-1 rounded-lg tracking-widest`}>COMING SOON</button>
             )}
         </div>
     </div>

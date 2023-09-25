@@ -13,7 +13,7 @@ const index = () => {
     <div className="overflow-x-hidden">
       <Navbar />
       <p className=" bg-clip-text  text-white   font-bold text-2xl md:text-3xl my-10 tracking-widest ml-[42px] mt-[50px] ">
-            our Courses 
+            Our Courses
       </p>
      
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-7 mx-10  gap-5 ">
