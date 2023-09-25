@@ -23,12 +23,12 @@ const Footer = () => {
         </div>
         <div className="md:flex-row flex flex-col justify-around w-1/2 items-center">
           <div className="h-full flex items-center">
-            <Link href="#whynotime" className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-              Why Notime?
-            </Link>
+            {/*<Link href="#whynotime" className="mb-6 text-sm font-semibold  uppercase text-white">*/}
+            {/*  Why Notime?*/}
+            {/*</Link>*/}
           </div>
           <div className="h-full flex items-center">
-            <Link href="/courses" className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white ">
+            <Link href="/courses" className="mb-6 text-sm font-semibold  uppercase text-white ">
               Courses
             </Link>
           </div>
