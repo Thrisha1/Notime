@@ -25,12 +25,14 @@ const CourseCard = ({name,img,prize}) => {
           <span className="text-3xl font-bold ">
           {prize}
           </span>
-          <Link
-            href="/courses/1"
-            class="text-white focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gradient-to-r from-purple-900  to-blue-500"
-          >
-            Know More
-          </Link>
+            {num === 4 ? (
+              <Link
+                href="/courses/1"
+                class="text-white focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gradient-to-r from-purple-900  to-blue-500"
+              >
+                Know More
+              </Link>
+            ): null }
         </div>
       </div>
     </div>
