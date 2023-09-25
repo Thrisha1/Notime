@@ -32,7 +32,15 @@ const CourseCard = ({name,img,prize,num}) => {
               >
                 Know More
               </Link>
-            ): null }
+            ): (
+                <Link
+                    href=""
+                    class="text-white focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gradient-to-r from-purple-900  to-blue-500"
+                >
+                    Coming Soon
+                </Link>
+            )
+            }
         </div>
       </div>
     </div>
