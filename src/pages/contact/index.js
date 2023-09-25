@@ -20,7 +20,7 @@ const index = () => {
                 email</label>
               <input type="email" id="email"
                      className="shadow-sm bg-gray-150  text-gray-900 text-sm rounded-lg block w-full p-2.5 "
-                     placeholder="www.notime.co.in" required/>
+                     placeholder="notime@gmail.com" required/>
             </div>
             <div className="my-4">
               <label htmlFor="subject"
