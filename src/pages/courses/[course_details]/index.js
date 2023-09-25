@@ -17,14 +17,14 @@ const index = () => {
             {/* main heading */}
             <div className='flex lg:gap-0 gap-9 lg:flex-row flex-col justify-between lg:items-start items-center'>
               <div className='lg:w-2/4'>
-                <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Foundations of Modern Web Design: HTML, CSS, and JavaScript for Beginners</h1>
+                <h1 class="mb-4 text-3xl font-extrabold leading-tight  lg:mb-6 lg:text-4xl text-white">Foundations of Modern Web Design: HTML, CSS, and JavaScript for Beginners</h1>
                 <p class="text-lg mb-3">Explore how to build amazing interactive and dynamic websites using HTML - CSS - JavaScript and Tailwind CSS</p>
                 <div className='flex'>
                   <Stars />
                 </div>
                 <div>
                   <div class="p-4 rounded-lg md:p-8 bg-gray-600 bg-opacity-50" id="about" role="tabpanel" aria-labelledby="about-tab">
-                    <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">What you will learn</h2>
+                    <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-white">What you will learn</h2>
                     <ul role="list" class="space-y-4 text-gray-500 dark:text-gray-400">
                       <li class="flex space-x-2 items-center">
                         <Tick />
@@ -87,20 +87,20 @@ const index = () => {
               {/* <Image width={300} height={300} className='w-96 h-56 mb-8' src="/assets/django.png" alt="" /> */}
             </div>
 
-            <h1 class="my-8 lg:text-left text-center text-xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-2xl dark:text-white">Meet your mentors</h1>
+            <h1 class="my-8 lg:text-left text-center text-xl font-extrabold leading-tight  lg:mb-6 lg:text-2xl text-white">Meet your mentors</h1>
             <header class="mb-4 lg:mb-6">
               <address class="flex flex-wrap items-center lg:justify-start justify-center gap-6 mb-6 not-italic">
                 <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                   <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full" src="/assets/me.jpg" alt="Jese Leos" />
                   <div>
-                    <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Muhammed Rinshad S R</a>
+                    <a href="#" rel="author" class="text-xl font-bold text-white">Muhammed Rinshad S R</a>
                     <p class="text-base text-gray-500 dark:text-gray-400">Web Designer and Developer</p>
                     <p class="text-base text-gray-500 dark:text-gray-400">
                       <span>@NoTime</span>
                     </p>
                   </div>
                 </div>
-                <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+                <div class="inline-flex items-center mr-3 text-sm text-white">
                   <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full" src="/assets/thrisha.jpg" alt="Jese Leos" />
                   <div>
                     <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Thrisha K</a>
