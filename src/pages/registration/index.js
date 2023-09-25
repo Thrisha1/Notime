@@ -53,9 +53,9 @@ const Index = () => {
 
                     <Image className="p-8 rounded-t-lg h-60" width={300} height={100} src="/assets/htmlcssjs1.png" alt="product image"/>
                         <div className="flex flex-col w-full items-center justify-center pb-4">
-                        <span className="text-3xl pb-4 font-bold text-gray-900 dark:text-white">$599</span>
+                        <span className="text-3xl pb-4 font-bold text-white">₹500</span>
                         <span
-                            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register for Course</span>
+                            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Register for Course</span>
                         </div>
                     </div>
 
