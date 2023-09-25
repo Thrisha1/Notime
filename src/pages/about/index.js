@@ -5,7 +5,7 @@ import Navbar from "../../common/components/Navbar.jsx";
 
 const index = () => {
   return (
-    <div>
+    <div className="h-screen overflow-y-hidden">
       <Navbar/>
       <About />
     </div>
