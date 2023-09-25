@@ -86,38 +86,38 @@ const Index = () => {
                             </h1>
                             <form onSubmit={handleSubmit(onSubmit)} class="space-y-4 md:space-y-6">
                                 <div>
-                                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>
+                                    <label for="name" class="block mb-2 text-sm font-medium text-white">Your Name</label>
                                     <input {...register("name")} type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your name" required />
                                 </div>
                                 <div>
-                                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                                    <label for="email" class="block mb-2 text-sm font-medium text-white">Your email</label>
                                     <input {...register("email")} type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Notime@gmail.com" required />
                                 </div>
                                 <div>
-                                    <label for="college" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your college</label>
+                                    <label for="college" class="block mb-2 text-sm font-medium text-white">Your college</label>
                                     <input {...register("college")} type="text" name="college" id="college" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="college" required />
                                 </div>
                                 <div>
-                                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your phone</label>
+                                    <label for="phone" class="block mb-2 text-sm font-medium text-white">Your phone</label>
                                     <input {...register("phone")} type="text" name="phone" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+91" required />
                                 </div>
                                 <div>
-                                    <label for="year" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Year of Study</label>
+                                    <label for="year" class="block mb-2 text-sm font-medium text-white">Year of Study</label>
                                     <input {...register("year")} type="text" name="year" id="year" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="year" required />
                                 </div>
                                 <div>
-                                    <label for="branch" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Branch of Study</label>
+                                    <label for="branch" class="block mb-2 text-sm font-medium text-white">Branch of Study</label>
                                     <input {...register("branch")} type="text" name="branch" id="branch" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="IT / CS / EC etc" required />
                                 </div>
                                 <div>
-                                    <label for="linkedin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">linkedin URL</label>
+                                    <label for="linkedin" class="block mb-2 text-sm font-medium text-white">linkedin URL</label>
                                     <input {...register("linkedin")} type="text" name="linkedin" id="linkedin" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="linkedin.com/"  />
                                 </div>
                                 <div>
-                                    <label for="github" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Github URL</label>
+                                    <label for="github" class="block mb-2 text-sm font-medium text-white">Github URL</label>
                                     <input {...register("github")} type="text" name="github" id="github" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://github.com/"  />
                                 </div>
-                                <button type="submit" class="w-full bg-white text-black font-medium rounded-lg text-sm px-5 py-2.5 text-center">Enroll Now</button>
+                                <button type="submit" class="w-full bg-blue-700 text-black font-medium rounded-lg text-sm px-5 py-2.5 text-center">Enroll Now</button>
                             </form>
                         </div>
                     </div>

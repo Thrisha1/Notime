@@ -25,7 +25,7 @@ const index = () => {
                 <div>
                   <div class="p-4 rounded-lg md:p-8 bg-gray-600 bg-opacity-50" id="about" role="tabpanel" aria-labelledby="about-tab">
                     <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-white">What you will learn</h2>
-                    <ul role="list" class="space-y-4 text-gray-500 dark:text-gray-400">
+                    <ul role="list" class="space-y-4 text-white">
                       <li class="flex space-x-2 items-center">
                         <Tick />
                         <span class="leading-tight">Create websites with HTML and CSS.
@@ -103,7 +103,7 @@ const index = () => {
                 <div class="inline-flex items-center mr-3 text-sm text-white">
                   <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full" src="/assets/thrisha.jpg" alt="Jese Leos" />
                   <div>
-                    <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Thrisha K</a>
+                    <a href="#" rel="author" class="text-xl font-bold text-white">Thrisha K</a>
                     <p class="text-base text-gray-500 dark:text-gray-400">Web Designer and Developer</p>
                     <p class="text-base text-gray-500 dark:text-gray-400">
                       <time pubdate datetime="2022-02-08" title="February 8th, 2022">@Centrric</time>
