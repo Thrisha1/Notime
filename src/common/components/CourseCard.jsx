@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import StarsCollect from "./StarsCollect";
-const CourseCard = ({name,img,prize}) => {
+const CourseCard = ({name,img,prize,num}) => {
   return (
     <div className="w-full max-w-sm h-80 border  rounded-lg shadow bg-gradient-to-r from-gray-600  to-blue-300 border-gray-700 text-white">
       <a href="#">
