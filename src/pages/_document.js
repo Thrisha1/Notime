@@ -19,7 +19,22 @@ class AppDocument extends Document {
   render() {
     return (
       <Html>
-        <Head></Head>
+        <Head>
+        <script>
+            {`
+              window.embeddedChatbotConfig = {
+                chatbotId: process.env.CHATBOT_ID,
+                domain: process.env.CHATBOT_DOMAIN,
+              };              
+            `}
+          </script>
+          <script
+            src="https://www.chatbase.co/embed.min.js"
+            chatbotId="My4J6sb8cbXqIFZmPkrMO"
+            domain="www.chatbase.co"
+            defer
+          ></script>
+        </Head>
         <body>
           <Main />
           <NextScript />

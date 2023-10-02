@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
+import Link from 'next/link'
 import Navbar from "../../../common/components/Navbar.jsx"
 import Stars from "./Stars.jsx"
 import Tick from './Tick.jsx'
+import Feature from "../../../common/components/Feature";
 
 const index = () => {
   return (
@@ -15,15 +17,15 @@ const index = () => {
             {/* main heading */}
             <div className='flex lg:gap-0 gap-9 lg:flex-row flex-col justify-between lg:items-start items-center'>
               <div className='lg:w-2/4'>
-                <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Foundations of Modern Web Design: HTML, CSS, and JavaScript for Beginners</h1>
+                <h1 class="mb-4 text-3xl font-extrabold leading-tight  lg:mb-6 lg:text-4xl text-white">Foundations of Modern Web Design: HTML, CSS, and JavaScript for Beginners</h1>
                 <p class="text-lg mb-3">Explore how to build amazing interactive and dynamic websites using HTML - CSS - JavaScript and Tailwind CSS</p>
                 <div className='flex'>
                   <Stars />
                 </div>
                 <div>
                   <div class="p-4 rounded-lg md:p-8 bg-gray-600 bg-opacity-50" id="about" role="tabpanel" aria-labelledby="about-tab">
-                    <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">What you'll learn</h2>
-                    <ul role="list" class="space-y-4 text-gray-500 dark:text-gray-400">
+                    <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-white">What you will learn</h2>
+                    <ul role="list" class="space-y-4 text-white">
                       <li class="flex space-x-2 items-center">
                         <Tick />
                         <span class="leading-tight">Create websites with HTML and CSS.
@@ -61,63 +63,22 @@ const index = () => {
               </div>
 
               {/* course card */}
-              <div class="w-full max-w-sm rounded-lg shadow bg-gray-600 bg-opacity-50">
-                <img class="p-8 rounded-t-lg" src="/assets/htmlcssjs1.png" alt="product image" />
-                <div class="px-5 pb-5">
+              <div className="w-full max-w-sm rounded-lg shadow bg-gray-600 bg-opacity-50">
+                <Image width={500} height={100} className="p-8 rounded-t-lg" src="/assets/htmlcssjs1.png" alt="product image" />
+                <div className="px-5 pb-5">
 
                   <div className='flex flex-col gap-2'>
-                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                    <span class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register for Course</span>
-                    <span class="mt-8 text-xl font-bold text-gray-900 dark:text-white">This Course will include : </span>
+                    <span className="text-3xl font-bold text-white">₹500</span>
+                    <Link href="/registration" className="text-white bg-blue-700 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Register for Course</Link>
+                    <span className="mt-8 text-xl font-bold  text-white">This Course will include : </span>
                     <div className='flex flex-col gap-3'>
-                      <div class="course-point flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-                        15 hours hands-on practice
-                      </div>
-                      <div class="course-point flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-
-                        Experienced mentors
-                      </div>
-                      <div class="course-point flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-
-                        Real-World Projects
-                      </div>
-                      <div class="course-point flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-
-                        Personalized Learning
-                      </div>
-                      <div class="course-point flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-
-                        Practical Workshops
-                      </div>
-                      <div class="course-point flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-
-                        Skill Assessments
-                      </div>
-                      <div class="course-point flex gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-
-                        Certificate of completion
-                      </div>
+                      <Feature point="15 hours hands-on practice" />
+                      <Feature point="Experienced mentors" />
+                      <Feature point="Real-World Projects"/>
+                      <Feature point="Personalized Learning"/>
+                      <Feature point="Practical Workshops"/>
+                      <Feature point="Skill Assessments"/>
+                      <Feature point="Certificate of completion"/>
                     </div>
                   </div>
                 </div>
@@ -126,23 +87,23 @@ const index = () => {
               {/* <Image width={300} height={300} className='w-96 h-56 mb-8' src="/assets/django.png" alt="" /> */}
             </div>
 
-            <h1 class="my-8 lg:text-left text-center text-xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-2xl dark:text-white">Meet your mentors</h1>
+            <h1 class="my-8 lg:text-left text-center text-xl font-extrabold leading-tight  lg:mb-6 lg:text-2xl text-white">Meet your mentors</h1>
             <header class="mb-4 lg:mb-6">
               <address class="flex flex-wrap items-center lg:justify-start justify-center gap-6 mb-6 not-italic">
                 <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                  <img class="mr-4 w-16 h-16 rounded-full" src="/assets/me.jpg" alt="Jese Leos" />
+                  <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full" src="/assets/me.jpg" alt="Jese Leos" />
                   <div>
-                    <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Muhammed Rinshad S R</a>
+                    <a href="#" rel="author" class="text-xl font-bold text-white">Muhammed Rinshad S R</a>
                     <p class="text-base text-gray-500 dark:text-gray-400">Web Designer and Developer</p>
                     <p class="text-base text-gray-500 dark:text-gray-400">
                       <span>@NoTime</span>
                     </p>
                   </div>
                 </div>
-                <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                  <img class="mr-4 w-16 h-16 rounded-full" src="/assets/thrisha.jpg" alt="Jese Leos" />
+                <div class="inline-flex items-center mr-3 text-sm text-white">
+                  <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full" src="/assets/thrisha.jpg" alt="Jese Leos" />
                   <div>
-                    <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Thrisha K</a>
+                    <a href="#" rel="author" class="text-xl font-bold text-white">Thrisha K</a>
                     <p class="text-base text-gray-500 dark:text-gray-400">Web Designer and Developer</p>
                     <p class="text-base text-gray-500 dark:text-gray-400">
                       <time pubdate datetime="2022-02-08" title="February 8th, 2022">@Centrric</time>
