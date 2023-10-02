@@ -19,7 +19,7 @@ const index = () => {
               <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-300">Your
                 email</label>
               <input type="email" id="email"
-                     className="shadow-sm bg-gray-150  text-gray-900 text-sm rounded-lg block w-full p-2.5 "
+                     className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm "
                      placeholder="notime@gmail.com" required/>
             </div>
             <div className="my-4">

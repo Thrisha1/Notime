@@ -9,6 +9,7 @@ import Feature from "../../common/components/Feature"
 
 const Index = () => {
     const [successModal, setSuccessModal] = useState(false);
+    const [RegisteringModal, setRegisteringModal] = useState(false);
     const [timer, setTimer] = useState(3);
 
     const router = useRouter();
@@ -16,6 +17,7 @@ const Index = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
+        setRegisteringModal(true);
         base('Registered').create({
             "Name": data.name,
             "Email": data.email,
@@ -31,7 +33,7 @@ const Index = () => {
                 return;
             }
 
-            // set the modal to true
+            setRegisteringModal(false);
             setSuccessModal(true);
             setInterval(() => {
                 setTimer(timer - 1);
@@ -139,6 +141,18 @@ const Index = () => {
                                 <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Successfully registered for the course.</p> 
                                 {/* show a redirecting content and show it as a timer */}
                                 <p class="mb-4 text-sm font-semibold text-gray-900 dark:text-white">Redirecting in {timer} seconds...</p>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+            {
+                RegisteringModal && (
+                    <div id="successModal" tabindex="-1" aria-hidden="true" class="w-full h-screen bg-black bg-opacity-80 overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center">
+                        <div class="flex justify-center items-center relative p-4 w-full max-w-md h-full md:h-auto">
+                            <div class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
+                                <span className="text-3xl loading loading-lg loading-spinner text-info mb-4"></span>
+                                <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Registering you for the course.</p>
                             </div>
                         </div>
                     </div>
