@@ -31,7 +31,7 @@ function Courselist({ name, img, para, state }) {
             </button>
             <button
               onClick={() => {
-                router.push("/courses/html-css-js");
+                router.push("/courses/React_facilitator");
               }}
               className={` bg-white text-center text-black w-24 text-xs md:text-normal md:w-32  py-2 rounded-lg tracking-widest`}
             >

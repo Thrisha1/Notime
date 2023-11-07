@@ -18,16 +18,16 @@ export default function SwipeCards() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <CourseCard num="4" img={img4} name="HTML/CSS/JavaScript" prize="₹500" />
+          <CourseCard num="1" img={img1} name="React JS"/>
         </SwiperSlide>
         <SwiperSlide>
-          <CourseCard num="1" img={img1} name="React JS" prize="₹499"/>
+          <CourseCard num="4" img={img4} name="HTML/CSS/JavaScript"/>
         </SwiperSlide>
         <SwiperSlide>
-          <CourseCard num="2" img={img2} name="Next JS" prize="₹499" />
+          <CourseCard num="2" img={img2} name="Next JS" />
         </SwiperSlide>
         <SwiperSlide>
-          <CourseCard num="3" img={img3} name="Django" prize="₹499"/>
+          <CourseCard num="3" img={img3} name="Django"/>
         </SwiperSlide>
       </Swiper>
     </>
