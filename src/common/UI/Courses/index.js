@@ -18,8 +18,8 @@ const index = () => {
      
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-7 mx-10  gap-5 ">
 
-        <Courselist state={1} name="HTML/CSS/JS" img={htmlcssjs} para="Introduction to HTML,CSS,JS, main languages to build website" />
-        <Courselist state={0} name="REACT JS" img={reactimg} para="Introduction to React JS, a library for building UI components" />
+        <Courselist state={0} name="HTML/CSS/JS" img={htmlcssjs} para="Introduction to HTML,CSS,JS, main languages to build website" />
+        <Courselist state={1} name="REACT JS" img={reactimg} para="Introduction to React JS, a library for building UI components" />
         <Courselist state={0} name="NEXT JS" img={next} para="Introduction to Next JS, a framework of React" />
         <Courselist state={0} name="DJANGO"  img={django} para="Introduction to django, a Python web framework that enables rapid development of secure and maintainable websites  "/>
       </div> 

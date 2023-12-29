@@ -7,7 +7,7 @@ const index = () => {
     <div className="overflow-hidden h-screen">
      <Navbar/>
     <div className="flex  justify-center w-full h-full">
-      <section className="md:bg-white bg-opacity-20 w-max">
+      <section className="bg-opacity-20 w-max">
         <div className="py-8 px-4 mx-auto max-w-screen-md">
           <h2 className="mb-4 text-2xl md:text-4xl tracking-tight font-extrabold text-center text-gray-300">Contact
             Us</h2>
@@ -19,8 +19,8 @@ const index = () => {
               <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-300">Your
                 email</label>
               <input type="email" id="email"
-                     className="shadow-sm bg-gray-150  text-gray-900 text-sm rounded-lg block w-full p-2.5 "
-                     placeholder="www.notime.co.in" required/>
+                     className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm "
+                     placeholder="notime@gmail.com" required/>
             </div>
             <div className="my-4">
               <label htmlFor="subject"

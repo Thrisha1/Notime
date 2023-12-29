@@ -22,10 +22,10 @@ const CourseCard = ({name,img,prize,num}) => {
         </a>
         <StarsCollect />
         <div className="flex items-center justify-between">
-          <span className="text-3xl font-bold ">
+          {/* <span className="text-3xl font-bold ">
           {prize}
-          </span>
-            {num == 4 ? (
+          </span> */}
+            {num == 1 ? (
               <Link
                 href="/courses/1"
                 class="text-white focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gradient-to-r from-purple-900  to-blue-500"
