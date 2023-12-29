@@ -22,6 +22,11 @@ export const course = {
             type: 'text',
         },
         {
+            name: 'price',
+            title: 'Price',
+            type: 'number',
+        },
+        {
             name: 'courseImage',
             title: 'Course Image',
             type: 'image',

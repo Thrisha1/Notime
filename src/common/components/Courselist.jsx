@@ -20,7 +20,6 @@ function Courselist({ courseData }) {
           {courseData.title}
         </p>
         <p className="text-xs md:text-sm xs:text-left text-center">{courseData.description}</p>
-        {courseData.key === 1 ? (
           <div className="flex xs:flex-row flex-col gap-4">
             <button
               onClick={() => {
@@ -32,20 +31,18 @@ function Courselist({ courseData }) {
             </button>
             <button
               onClick={() => {
-                router.push("/courses/React_facilitator");
+                router.push(`/courses/${courseData.slug.current}`)
               }}
               className={` bg-white text-center text-black w-24 text-xs md:text-normal md:w-32  py-2 rounded-lg tracking-widest`}
             >
               Know More
             </button>
           </div>
-        ) : (
           <button
             className={`opacity-70 bg-white text-center text-black w-24 text-xs md:text-normal md:w-32  py-2 px-1 rounded-lg tracking-widest`}
           >
             COMING SOON
           </button>
-        )}
       </div>
     </div>
   );

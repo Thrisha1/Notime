@@ -17,9 +17,22 @@ const index = () => {
     const router = useRouter();
 
     const [courses, setCourses] = useState([]);
-    const query = '*[_type == "course"]';
+    const query = `*[_type == "course" && slug == "${router.query.course_details}"] {
+        title,
+        slug,
+        description,
+        courseImage {
+            asset -> {
+                _id,
+                url
+            }
+        },
+        learningObjectives,
+        topics,
+        prerequisites,
+        mentors
+    }`;
 
-// Fetch documents from Sanity
     useEffect(() => {
         client.fetch(query)
             .then((data) => {
@@ -36,8 +49,8 @@ const index = () => {
 
         <div className='overflow-x-hidden'>
             <Navbar/>
-            {courses?.map((course,index) => (
-                <div key={index} class="pt-8 pb-16 lg:pt-10 lg:pb-24 bg-transparent">
+            {course && (
+                <div key={course.slug.current} class="pt-8 pb-16 lg:pt-10 lg:pb-24 bg-transparent">
                     <div class="flex justify-between px-4 mx-auto max-w-screen-xl">
                         <article class="mx-auto w-full text-white">
 
@@ -123,9 +136,52 @@ const index = () => {
                         </article>
                     </div>
                 </div>
-            ))}
+            ) }
         </div>
     )
 }
 
+// Define the getStaticPaths function
+export async function getStaticPaths() {
+    // Get the paths we want to pre-render based on posts
+    const course_details = "context -> {slug}";
+
+    // Fetch the slugs from Sanity
+    const paths = await client.fetch(`*[_type == "course"]{ "params": { ${course_details}: slug }}`);
+
+    // Return an array of objects with the params key
+    return {
+        paths,
+        fallback: true, // Set to false if you want 404 for non-existing paths
+    };
+}
+
+// Implement the getStaticProps function
+export async function getStaticProps({ params }) {
+    const { course_details } = params;
+
+    // Fetch data for a specific slug from Sanity
+    const data = await client.fetch(`*[_type == "course" && slug == "${course_details}"] {
+    title,
+    slug,
+    description,
+    courseImage {
+        asset -> {
+            _id,
+            url
+        }
+    },
+    learningObjectives,
+    topics,
+    prerequisites,
+    mentors
+  }`);
+
+    return {
+        props: {
+            course: data[0] || null,
+        },
+        revalidate: 60, // Optional: Time in seconds for the page to be re-generated on the server
+    };
+}
 export default index
