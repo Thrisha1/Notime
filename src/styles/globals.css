@@ -4,7 +4,7 @@
 
 body{
     background-image: url('../../public/assets/background.jpg');
-    background-repeat: no-repeat;
+    background-repeat: repeat-y; 
     background-size: cover;
 }
 

@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
+    'node_modules/flowbite-react/lib/esm/**/*.js',
   ],
   theme: {
     screens: {
@@ -42,5 +43,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"),require('flowbite/plugin'),],
 };
