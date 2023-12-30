@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import HomePage from '../common/UI/homepage/HomePage.jsx'
+import Bg from "../../public/assets/background.jpg"
 
 export default function Home() {
   return (

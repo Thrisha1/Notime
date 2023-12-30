@@ -5,6 +5,8 @@ import Airtable from 'airtable';
 import { useRouter } from "next/router";
 import Navbar from "../../common/components/Navbar";
 import Feature from "../../common/components/Feature"
+import { useSession,getSession } from "next-auth/react";
+
 
 
 const Index = () => {
@@ -12,7 +14,6 @@ const Index = () => {
     const [RegisteringModal, setRegisteringModal] = useState(false);
     const [timer, setTimer] = useState(3);
 
-    const router = useRouter();
     var base = new Airtable({ apiKey: process.env.NEXT_PUBLIC_airtable_api }).base('app6CHsYoG1ehpXei');
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -169,5 +170,26 @@ const Index = () => {
         </div>
     );
 };
+
+export async function getServerSideProps(context) {
+    const session = await getSession(context);
+  
+    if (!session) {
+      // Redirect to the login page if the user is not authenticated
+      return {
+        redirect: {
+          destination: "/",
+          permanent: false,
+        },
+      };
+    }
+  
+    // If the session is available, pass it as a prop to the component
+    return {
+      props: {
+        session,
+      },
+    };
+  }
 
 export default Index;
