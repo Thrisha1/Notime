@@ -12,45 +12,13 @@ import {course} from '../../../../sanity/schemas/course'
 import {useRouter} from 'next/navigation'
 
 
-const index = () => {
-    // Example query
-    const router = useRouter();
-
-    const [courses, setCourses] = useState([]);
-    const query = `*[_type == "course" && slug == "${router.query.course_details}"] {
-        title,
-        slug,
-        description,
-        courseImage {
-            asset -> {
-                _id,
-                url
-            }
-        },
-        learningObjectives,
-        topics,
-        prerequisites,
-        mentors
-    }`;
-
-    useEffect(() => {
-        client.fetch(query)
-            .then((data) => {
-                console.log('Fetched data:', data);
-                setCourses(data);
-            })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-            });
-    }, []);
+const index = ({course}) => {
 
     return (
-
-
         <div className='overflow-x-hidden'>
             <Navbar/>
             {course && (
-                <div key={course.slug.current} class="pt-8 pb-16 lg:pt-10 lg:pb-24 bg-transparent">
+                <div key={course.slug} class="pt-8 pb-16 lg:pt-10 lg:pb-24 bg-transparent">
                     <div class="flex justify-between px-4 mx-auto max-w-screen-xl">
                         <article class="mx-auto w-full text-white">
 
@@ -141,47 +109,38 @@ const index = () => {
     )
 }
 
-// Define the getStaticPaths function
 export async function getStaticPaths() {
-    // Get the paths we want to pre-render based on posts
-    const course_details = "context -> {slug}";
+    let data = [];
+    const query = `*[_type == "course"]`;
 
-    // Fetch the slugs from Sanity
-    const paths = await client.fetch(`*[_type == "course"]{ "params": { ${course_details}: slug }}`);
+    await client.fetch(query).then((res) => {
+        data = res;
+    });
 
-    // Return an array of objects with the params key
+    const paths = data?.map((course) => ({
+        params: { course_details: course.slug.current } // Extract slug directly
+    }));
+
     return {
         paths,
-        fallback: true, // Set to false if you want 404 for non-existing paths
+        fallback: true
     };
 }
 
-// Implement the getStaticProps function
 export async function getStaticProps({ params }) {
     const { course_details } = params;
+    const query = `*[_type == "course" && slug.current == $slug][0]`;
+    const paramsObject = { slug: course_details };
 
-    // Fetch data for a specific slug from Sanity
-    const data = await client.fetch(`*[_type == "course" && slug == "${course_details}"] {
-    title,
-    slug,
-    description,
-    courseImage {
-        asset -> {
-            _id,
-            url
-        }
-    },
-    learningObjectives,
-    topics,
-    prerequisites,
-    mentors
-  }`);
+    const course = await client.fetch(query, paramsObject);
+
+    console.log("course : ", course)
 
     return {
         props: {
-            course: data[0] || null,
+            course,
         },
-        revalidate: 60, // Optional: Time in seconds for the page to be re-generated on the server
     };
 }
+
 export default index

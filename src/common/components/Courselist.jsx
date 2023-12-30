@@ -38,11 +38,6 @@ function Courselist({ courseData }) {
               Know More
             </button>
           </div>
-          <button
-            className={`opacity-70 bg-white text-center text-black w-24 text-xs md:text-normal md:w-32  py-2 px-1 rounded-lg tracking-widest`}
-          >
-            COMING SOON
-          </button>
       </div>
     </div>
   );
