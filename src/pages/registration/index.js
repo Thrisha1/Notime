@@ -5,62 +5,80 @@ import Airtable from 'airtable';
 import { useRouter } from "next/router";
 import Navbar from "../../common/components/Navbar";
 import Feature from "../../common/components/Feature"
-import { useSession,getSession } from "next-auth/react";
-
-
+import { useSession, getSession } from "next-auth/react";
+import { useSelector } from "react-redux";
+import supabase from "../../supabase/supaBase"
 
 const Index = () => {
     const [successModal, setSuccessModal] = useState(false);
     const [RegisteringModal, setRegisteringModal] = useState(false);
     const [timer, setTimer] = useState(3);
+    const router = useRouter();
+    const { data: session } = useSession();
+    const subject = localStorage.getItem("courseName")
 
-    var base = new Airtable({ apiKey: process.env.NEXT_PUBLIC_airtable_api }).base('app6CHsYoG1ehpXei');
+    // var base = new Airtable({ apiKey: process.env.NEXT_PUBLIC_airtable_api }).base('app6CHsYoG1ehpXei');
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => {
-        console.log(data);
-        setRegisteringModal(true);
-        base('React_Facilitator_Training').create({
-            "Name": data.name,
-            "Email": data.email,
-            "College": data.college,
-            "Phone": data.phone,
-            "Year": data.year,
-            "Branch": data.branch,
-            "LinkedIn": data.linkedin,
-            "Github": data.github,
-            "Tell about your experience in React JS": data.experience,
-        }, function (err, record) {
-            if (err) {
-                console.error(err);
-                return;
+    const onSubmit = async(data) => {
+        try {
+            console.log(data);
+            setRegisteringModal(true);
+            // now we have the experience data and then email of user from session now using the data from email search a user in the table students and the update the courses column which is a json which is an array of objects the first is course_name then entrolled_at which is auto generated at the current time and prior_exp which is experience data the data is set in supabase
+
+            const { data: userData, error: userError } = await supabase
+                .from('students')
+                .select('id, courses')
+                .eq('email', session.user.email)
+                .single();
+
+            if (userError) {
+                throw userError;
             }
 
-            setRegisteringModal(false);
-            setSuccessModal(true);
-            setInterval(() => {
-                setTimer(timer - 1);
-            }, 1000);
-            setTimeout(() => {
-                setSuccessModal(false);
-                router.push('/courses');
-            }, 3000);
-            console.log(record.getId());
-        });
-    }
+            // If the user is found, update the "courses" column
+            if (userData) {
+                const updatedCourses = [
+                    ...userData.courses,
+                    {
+                        course_name: subject, // Use the subject from Redux
+                        enrolled_at: new Date().toISOString(),
+                        prior_exp: data.experience,
+                    },
+                ];
+
+                // Update the user's record with the new course information
+                const { error: updateError } = await supabase
+                    .from('students')
+                    .update({ courses: updatedCourses })
+                    .eq('id', userData.id);
+
+                if (updateError) {
+                    throw updateError;
+                }
+
+                // Your existing code for success modal, timer, etc.
+
+                // Redirect to the courses page
+                setTimeout(() => {
+                    setSuccessModal(false);
+                    router.push('/courses');
+                }, 3000);
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error.message);
+        }
+    };
+
     return (
         <div className="overflow-x-hidden">
             <Navbar />
             <div className="flex flex-col">
-                <div className="  flex items-start justify-between md:mx-10">
+                {/* <div className="  flex items-start justify-between md:mx-10">
                     <div className="w-full md:flex hidden rounded-lg shadow bg-gray-600 bg-opacity-50">
                         <div>
 
                             <Image className="p-3 rounded-t-lg h-60" width={300} height={100} src="/assets/Courses/images/Reactjs.svg" alt="product image" />
-                            {/* <div className="flex flex-col w-full items-center justify-center pb-10"> */}
-                                {/* <span className="text-3xl pb-4 font-bold text-white">₹500</span> */}
-                                {/* <span
-                                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Register for Course</span> */}
-                            {/* </div> */}
+                            
                         </div>
 
                         <div className='flex flex-col gap-2 text-white items-center justify-center '>
@@ -77,7 +95,7 @@ const Index = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <section class="bg-transparent md:mt-12 pb-12 w-full ">
                     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
                         {/* <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
@@ -90,7 +108,7 @@ const Index = () => {
                                     Enroll for the course
                                 </h1>
                                 <form onSubmit={handleSubmit(onSubmit)} class="space-y-4 md:gap-4 md:grid md:grid-cols-2 grid-cols-1 justify-center items-center ">
-                                    <div>
+                                    {/* <div>
                                         <label for="name" class="block mb-2 text-sm font-medium text-white">Your Name</label>
                                         <input {...register("name")} type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Your name" required />
                                     </div>
@@ -121,10 +139,10 @@ const Index = () => {
                                     <div>
                                         <label for="github" class="block mb-2 text-sm font-medium text-white">Github URL</label>
                                         <input {...register("github")} type="text" name="github" id="github" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="https://github.com/" />
-                                    </div>
+                                    </div> */}
                                     <div className="col-span-2">
-                                        <label for="experience" class="block mb-2 text-sm font-medium text-white">Experience in React</label>
-                                        <textarea {...register("experience")} type="textarea" name="experience" id="experience" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="experience" required />
+                                        <label for="experience" class="block mb-2 text-sm font-medium text-white">Do you have any prior experience in learning about {subject}</label>
+                                        <textarea {...register("experience")} type="textarea" name="experience" id="experience" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="experiences like doing projects, freelance works, current job etc" required />
                                     </div>
                                     <div className="col-span-2 flex justify-center items-center">
                                         <button type="submit" class="w-1/3 text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-900 ">Enroll Now</button>
@@ -168,28 +186,28 @@ const Index = () => {
                 )
             }
         </div>
-    );
+    )
 };
 
 export async function getServerSideProps(context) {
     const session = await getSession(context);
-  
+
     if (!session) {
-      // Redirect to the login page if the user is not authenticated
-      return {
-        redirect: {
-          destination: "/",
-          permanent: false,
-        },
-      };
+        // Redirect to the login page if the user is not authenticated
+        return {
+            redirect: {
+                destination: "/",
+                permanent: false,
+            },
+        };
     }
-  
+
     // If the session is available, pass it as a prop to the component
     return {
-      props: {
-        session,
-      },
+        props: {
+            session,
+        },
     };
-  }
+}
 
 export default Index;

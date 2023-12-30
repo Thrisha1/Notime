@@ -29,7 +29,7 @@ const Hero = () => {
       updateContent();
     }, 3200);
     return () => clearInterval(interval);
-  }, );
+  });
 
   const updateContent = () => {
     setContentIndex((prevIndex) => (prevIndex + 1) % contents.length);
@@ -58,15 +58,16 @@ const Hero = () => {
               {contents[contentIndex]}
             </span>
           </div>
-          <Link href="/registration"  className="bg-gray-300 py-3  text-dark tracking-widest font-bold  px-7 rounded-lg my-10 md:my-7">
-            Register Now
+          <Link
+            href="/registration"
+            className="bg-gray-300 text-black py-3  text-dark tracking-widest font-bold  px-7 rounded-lg my-10 md:my-7"
+          >
+            Know About Our Courses
           </Link>
         </div>
       </div>
       <div className="w-1/2">
-        <div
-          className="animate-bouncer"
-        >
+        <div className="animate-bouncer">
           <motion.div
             className=""
             initial={{ opacity: 1 }}

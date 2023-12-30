@@ -8,6 +8,7 @@ import img1 from "../../../public/assets/react-img.png";
 import img2 from "../../../public/assets/next.png";
 import img3 from "../../../public/assets/django.png";
 import img4 from "../../../public/assets/htmlcssjs1.png";
+
 export default function SwipeCards() {
   return (
     <>

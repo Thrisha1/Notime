@@ -1,5 +1,5 @@
 "use client"
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from "../../../common/components/Navbar.jsx"
@@ -7,9 +7,9 @@ import Stars from "./Stars.jsx"
 import Tick from './Tick.jsx'
 import Feature from "../../../common/components/Feature";
 // sanity from client.js
-import {client} from "../../../../sanity/lib/client";
-import {course} from '../../../../sanity/schemas/course'
-import {useRouter} from 'next/navigation'
+import { client } from "../../../../sanity/lib/client";
+import { course } from '../../../../sanity/schemas/course'
+import { useRouter } from 'next/navigation'
 
 
 const index = () => {
@@ -48,7 +48,7 @@ const index = () => {
 
 
         <div className='overflow-x-hidden'>
-            <Navbar/>
+            <Navbar />
             {course && (
                 <div key={course.slug.current} class="pt-8 pb-16 lg:pt-10 lg:pb-24 bg-transparent">
                     <div class="flex justify-between px-4 mx-auto max-w-screen-xl">
@@ -62,15 +62,15 @@ const index = () => {
                                     <p class="text-lg mb-3">{course?.description}</p>
                                     <div className='mt-10'>
                                         <div class="p-4 rounded-lg md:p-8 bg-gray-600 bg-opacity-50" id="about"
-                                             role="tabpanel" aria-labelledby="about-tab">
+                                            role="tabpanel" aria-labelledby="about-tab">
                                             <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-white">What you
                                                 will learn</h2>
                                             <ul role="list" class="space-y-4 text-white">
-                                                {course?.learningObjectives?.map((e,index) => (
-                                                <li key={index} class="flex space-x-2 items-center">
-                                                    <Tick/>
-                                                    <span class="leading-tight">{e}</span>
-                                                </li>
+                                                {course?.learningObjectives?.map((e, index) => (
+                                                    <li key={index} class="flex space-x-2 items-center">
+                                                        <Tick />
+                                                        <span class="leading-tight">{e}</span>
+                                                    </li>
                                                 ))}
 
                                             </ul>
@@ -80,18 +80,18 @@ const index = () => {
                                 {/* course card */}
                                 <div className="w-full max-w-sm rounded-lg shadow bg-gray-600 bg-opacity-50">
                                     <Image width={500} height={100} className="p-8 rounded-t-lg"
-                                           src="/assets/Courses/images/Reactjs.svg" alt="product image"/>
+                                        src="/assets/Courses/images/Reactjs.svg" alt="product image" />
                                     <div className="px-5 pb-5">
 
                                         <div className='flex flex-col gap-2'>
                                             {/* <span className="text-3xl font-bold text-white">₹500</span> */}
                                             <Link href="/registration"
-                                                  className="text-white bg-blue-700 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Register
+                                                className="text-white bg-blue-700 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Register
                                                 for Course</Link>
                                             <span className="mt-8 text-xl font-bold  text-white">This Course will include : </span>
                                             <div className='flex flex-col gap-3'>
-                                                {course?.topics?.map((e,index) => (
-                                                    <Feature key={index} point={e}/>
+                                                {course?.topics?.map((e, index) => (
+                                                    <Feature key={index} point={e} />
                                                 ))}
                                             </div>
                                         </div>
@@ -108,7 +108,7 @@ const index = () => {
                                     class="flex flex-wrap items-center lg:justify-start justify-center gap-6 mb-6 not-italic">
                                     <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                                         <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full"
-                                               src="/assets/me.jpg" alt="Jese Leos"/>
+                                            src="/assets/me.jpg" alt="Jese Leos" />
                                         <div>
                                             <a href="#" rel="author" class="text-xl font-bold text-white">Muhammed
                                                 Rinshad S R</a>
@@ -121,7 +121,7 @@ const index = () => {
                                     </div>
                                     <div class="inline-flex items-center mr-3 text-sm text-white">
                                         <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full"
-                                               src="/assets/thrisha.jpg" alt="Jese Leos"/>
+                                            src="/assets/thrisha.jpg" alt="Jese Leos" />
                                         <div>
                                             <a href="#" rel="author" class="text-xl font-bold text-white">Thrisha K</a>
                                             <p class="text-base text-gray-500 dark:text-gray-400">Founder and CTO</p>
@@ -136,7 +136,7 @@ const index = () => {
                         </article>
                     </div>
                 </div>
-            ) }
+            )}
         </div>
     )
 }

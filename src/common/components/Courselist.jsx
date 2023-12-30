@@ -2,10 +2,15 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useSelector, useDispatch } from "react-redux";
+import { courseNameAdd } from "../../../redux/slices/courseRegister";
+
 
 function Courselist({ courseData }) {
   const router = useRouter();
   const imageUrl = courseData.courseImage.asset.url;
+  const data = useSelector((state) => state.register.value);
+  const dispatch = useDispatch();
   return (
     <div className="w-full overflow-x-hidden px-6 flex flex-col gap-5 xs:gap-0 xs:flex-row justify-start py-4  items-center  rounded-3xl bg-transparent bg-white xs:h-44 md:h-60 bg-opacity-[20%] ">
       <Image
@@ -23,6 +28,8 @@ function Courselist({ courseData }) {
           <div className="flex xs:flex-row flex-col gap-4">
             <button
               onClick={() => {
+                dispatch(courseNameAdd(courseData.title));
+                localStorage.setItem('courseName', courseData.title);
                 router.push("/registration");
               }}
               className={` bg-white text-center text-black w-24 text-xs md:text-normal md:w-32  py-2 rounded-lg tracking-widest`}

@@ -11,12 +11,16 @@ const TodoList = () => {
     fetchTasks();
   }, []);
 
+  useEffect(() => {
+    console.log("tasks", tasks);
+  }, [tasks]);
+
   const fetchTasks = async () => {
     try {
       const { data, error } = await supabase
         .from("todos")
         .select("*")
-        .order("created_at", { ascending: false });
+        .order("created_at", { ascending: true });
 
       if (error) {
         throw error;
@@ -32,13 +36,21 @@ const TodoList = () => {
     try {
       const { data, error } = await supabase
         .from("todos")
-        .upsert([{ task_name: newTask }]);
+        .upsert([{ task_name: newTask }])
+        .select();
 
+      console.log("Supabase Response:", { data, error });
+
+      // Check if data is truthy before accessing its elements
+      if (data && data.length > 0) {
+        setTasks((prevTasks) => [...prevTasks, data[data.length - 1]]);
+      }
+
+      alert("new task added successfully")
       if (error) {
         throw error;
       }
 
-      setTasks([...tasks, data[0]]);
       setNewTask("");
     } catch (error) {
       console.error("Error adding task:", error.message);
@@ -60,27 +72,30 @@ const TodoList = () => {
   };
 
   return (
-    <div className="h-screen">
-      <h1>Todo List</h1>
-      <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            {task.task_name}
-            <button onClick={() => deleteTask(task.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
-      <div>
+    <div className="flex flex-col p-10 max-w-md py-20">
+      <h1 className="text-3xl mb-20">Todo List</h1>
+      <div className="flex justify-between mb-10">
         <input
+          className="rounded-lg"
           type="text"
           value={newTask}
           onChange={(e) => {
-            console.log(e.target.value);
             setNewTask(e.target.value);
           }}
+          placeholder="Task is :"
         />
-        <button onClick={addTask}>Add Task</button>
+        <button className="border px-5 py-1 text-lg " onClick={addTask}>Add Task</button>
       </div>
+      <ul className="flex flex-col gap-5">
+        {tasks.map((task) => (
+          <li className="flex justify-between" key={task.id}>
+            <h1 className="border px-5 py-1 bg-white rounded-lg text-black text-lg w-max">
+              {task.task_name}
+            </h1>
+            <button className="border px-5 py-1 bg-red-500 text-black rounded-lg text-lg w-max" onClick={() => deleteTask(task.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

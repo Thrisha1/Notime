@@ -2,7 +2,7 @@ import React from "react";
 
 const StarsCollect = () => {
   return (
-    <div class="flex items-center mt-2.5 mb-5">
+    <div class="flex items-center gap-2 mt-2.5 mb-5">
       <svg
         class="w-4 h-4 text-yellow-300 mr-1"
         aria-hidden="true"

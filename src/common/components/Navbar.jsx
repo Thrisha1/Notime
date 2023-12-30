@@ -4,11 +4,13 @@ import Logo from "../../../public/logo.png";
 import Link from "next/link";
 import { useRouter } from "next/router"; // Import the useRouter hook
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
+import { useSelector, useDispatch } from 'react-redux'
 
 const Navbar = () => {
   const router = useRouter(); // Initialize the useRouter hook
   const { data: session, status } = useSession();
   console.log(session);
+  const counter = useSelector((state) => state.register.value);
 
   const opener = () => {
     const navbar = document.getElementById("navbar-search");
