@@ -1,8 +1,8 @@
 import React from "react";
-import Courses from "../../common/UI/Courses";
+import Courses from "../../common/UI/Courses/Courses";
 import Navbar from "../../common/components/Navbar";
 
-const index = () => {
+const Index = () => {
   return (
     <div className="overflow-hidden h-screen">
      <Navbar/>
@@ -50,4 +50,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

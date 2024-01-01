@@ -3,7 +3,7 @@ import HomePage from '../../common/UI/homepage/about/About.jsx';
 import About from "../../common/UI/homepage/about/About.jsx";
 import Navbar from "../../common/components/Navbar.jsx";
 
-const index = () => {
+const Index = () => {
   return (
     <div className="h-screen overflow-y-hidden">
       <Navbar/>
@@ -12,4 +12,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

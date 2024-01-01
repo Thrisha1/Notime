@@ -1,7 +1,7 @@
 import React from "react";
-import Courses from "../../common/UI/Courses";
+import Courses from "../../common/UI/Courses/Courses";
 
-const index = () => {
+const Index = () => {
   return (
     <div className="overflow-x-hidden">
       
@@ -10,4 +10,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

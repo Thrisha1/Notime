@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Cardbg from "../../../../../../public/assets/card-background.png"
 
 
-function index({name,img}) {
+function Index({name,img}) {
   return (
 
     <div id="card_we" class="flex flex-col justify-center items-center w-[16rem] sm:w-[20rem] h-56 rounded-3xl shadow-md bg-transparent">
@@ -20,4 +20,4 @@ function index({name,img}) {
   )
 }
 
-export default index
+export default Index

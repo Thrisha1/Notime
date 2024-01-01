@@ -1,10 +1,10 @@
 import React,{ useEffect, useState } from "react";
-import Navbar from "../../components/Navbar"
-import Courselist from "../../components/Courselist"
+import Navbar from "../../components/Navbar.jsx"
+import Courselist from "../../components/Courselist.jsx"
 import Footer from '../../components/Footer.jsx'
-import { client } from "../../../../sanity/lib/client";
+import { client } from "../../../../sanity/lib/client.js";
 
-const index = () => {
+const Courses = () => {
   const [courses, setCourses] = useState([]);
   const query = `*[_type == "course"] {
       title,
@@ -60,4 +60,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Courses;
