@@ -6,12 +6,10 @@ import reactimg from "../../../../public/assets/react-img.png"
 import django from "../../../../public/assets/django.png"
 import next from "../../../../public/assets/next.png"
 import Footer from '../../components/Footer.jsx'
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { client } from "../../../../sanity/lib/client";
 
 const index = () => {
-  const router = useRouter();
   const [courses, setCourses] = useState([]);
   const query = `*[_type == "course"] {
       title,
