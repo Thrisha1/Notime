@@ -118,7 +118,7 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
-            {session ? (
+            {/* {session ? (
               <li className="flex gap-5 items-center">
                 <h1>
                     Welcome back {session.user.name}
@@ -150,7 +150,7 @@ const Navbar = () => {
                   Signin
                 </button>
               </li>
-            )}
+            )} */}
           </ul>
         </div>
       </div>
