@@ -1,12 +1,7 @@
-import React from "react";
+import React,{ useEffect, useState } from "react";
 import Navbar from "../../components/Navbar"
 import Courselist from "../../components/Courselist"
-import htmlcssjs from "../../../../public/assets/htmlcssjs1.png"
-import reactimg from "../../../../public/assets/react-img.png"
-import django from "../../../../public/assets/django.png"
-import next from "../../../../public/assets/next.png"
 import Footer from '../../components/Footer.jsx'
-import { useEffect, useState } from 'react'
 import { client } from "../../../../sanity/lib/client";
 
 const index = () => {
