@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -11,6 +11,19 @@ function Courselist({ courseData }) {
   const imageUrl = courseData.courseImage.asset.url;
   const data = useSelector((state) => state.register.value);
   const dispatch = useDispatch();
+
+    const [courseName, setCourseName] = useState("");
+    const arryobj = [{
+        courseName: "courseName",
+        price: "500",
+        courseImage: "url"
+    },
+        {
+            courseName: "courseName",
+            price: "500",
+            courseImage: "url"
+        },
+    ]
   return (
     <div className="w-full overflow-x-hidden px-6 flex flex-col gap-5 xs:gap-0 xs:flex-row justify-start py-4  items-center  rounded-3xl bg-transparent bg-white xs:h-44 md:h-60 bg-opacity-[20%] ">
       <Image
@@ -44,6 +57,13 @@ function Courselist({ courseData }) {
             >
               Know More
             </button>
+              <form>
+                <input
+                    onChange={(e) => setCourseName(e.target.value)}
+                    type="text"
+                    name="courseName"
+                    />
+              </form>
           </div>
       </div>
     </div>
