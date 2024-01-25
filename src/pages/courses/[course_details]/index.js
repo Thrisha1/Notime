@@ -12,7 +12,7 @@ import { course } from '../../../../sanity/schemas/course'
 import { useRouter } from 'next/navigation'
 
 
-const index = ({course}) => {
+const index = ({ course }) => {
 
     return (
         <div className='overflow-x-hidden'>
@@ -74,20 +74,23 @@ const index = ({course}) => {
                             <header class="mb-4 lg:mb-6">
                                 <address
                                     class="flex flex-wrap items-center lg:justify-start justify-center gap-6 mb-6 not-italic">
-                                    <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                                        <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full"
-                                            src="/assets/me.jpg" alt="Jese Leos" />
-                                        <div>
-                                            <a href="#" rel="author" class="text-xl font-bold text-white">Muhammed
-                                                Rinshad S R</a>
-                                            <p class="text-base text-gray-500 dark:text-gray-400">Founder & Full Stack
-                                                Developer</p>
-                                            <p class="text-base text-gray-500 dark:text-gray-400">
-                                                <span>@NoTime</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="inline-flex items-center mr-3 text-sm text-white">
+                                    {
+                                        course.mentors.map((mentor) => (
+
+                                            <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+                                                {/* <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full"
+                                                    src="/assets/me.jpg" alt="Jese Leos" /> */}
+                                                <div>
+                                                    <a href="#" rel="author" class="text-xl font-bold text-white">{mentor.name}</a>
+                                                    <p class="text-base text-gray-500 dark:text-gray-400">{mentor.designation}</p>
+                                                    {/* <p class="text-base text-gray-500 dark:text-gray-400">
+                                                        <span>@NoTime</span>
+                                                    </p> */}
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
+                                    {/* <div class="inline-flex items-center mr-3 text-sm text-white">
                                         <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full"
                                             src="/assets/thrisha.jpg" alt="Jese Leos" />
                                         <div>
@@ -98,7 +101,7 @@ const index = ({course}) => {
                                                 </time>
                                             </p>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </address>
                             </header>
                         </article>
