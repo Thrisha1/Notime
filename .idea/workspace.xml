@@ -6,8 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="2eb3bad4-ecd4-46b7-8ea7-46097ef4060a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/SanityVision-4O0Dtu_2-d8d6f62b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/browser-55835dd8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/index-Vf-P_8IU-c4f9459c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/index-XY6SPKYs-452f72f4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/index-zIcnC3Fm-fa65960f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/pane-7ppGEuIX-cacec1c4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/pane-TEq-dCXX-3b8a25ae.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/resources-BJKcoQBa-dffafc3b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/resources-bPLLJ09x-6e32ffa2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/sanity-59c0bd6d.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/components/Courselist.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Courselist.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/courses/[course_details]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courses/[course_details]/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +74,11 @@
       <workItem from="1703832098377" duration="220000" />
       <workItem from="1703832330193" duration="21000" />
       <workItem from="1703835081062" duration="16752000" />
-      <workItem from="1703932535216" duration="5435000" />
+      <workItem from="1703932535216" duration="9178000" />
+      <workItem from="1704013338839" duration="2716000" />
+      <workItem from="1704087069871" duration="19000" />
+      <workItem from="1704120634182" duration="1645000" />
+      <workItem from="1704165566844" duration="1474000" />
     </task>
     <servers />
   </component>
