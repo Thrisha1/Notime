@@ -9,6 +9,7 @@ import { useSession, getSession } from "next-auth/react";
 import supabase from "../../supabase/supaBase"
 
 const Index = () => {
+    const [Disable, setDisable] = useState(false)
     const [successModal, setSuccessModal] = useState(false);
     const [RegisteringModal, setRegisteringModal] = useState(false);
     const [timer, setTimer] = useState(3);
@@ -16,8 +17,9 @@ const Index = () => {
     const { data: session } = useSession();
 
     // var base = new Airtable({ apiKey: process.env.NEXT_PUBLIC_airtable_api }).base('app6CHsYoG1ehpXei');
-    const { register, handleSubmit,reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = async (datas) => {
+        setDisable(!Disable);
         // try {
         // console.log(data);
         // setRegisteringModal(true);
@@ -72,7 +74,7 @@ const Index = () => {
             )
             .select()
 
-        if(error){
+        if (error) {
             console.log(error);
         }
 
@@ -82,11 +84,11 @@ const Index = () => {
 
     }
 
-return (
-    <div className="overflow-x-hidden">
-        <Navbar />
-        <div className="flex flex-col">
-            {/* <div className="  flex items-start justify-between md:mx-10">
+    return (
+        <div className="overflow-x-hidden">
+            <Navbar />
+            <div className="flex flex-col">
+                {/* <div className="  flex items-start justify-between md:mx-10">
                     <div className="w-full md:flex hidden rounded-lg shadow bg-gray-600 bg-opacity-50">
                         <div>
 
@@ -109,31 +111,31 @@ return (
                         </div>
                     </div>
                 </div> */}
-            <section class="bg-transparent md:mt-12 pb-12 w-full ">
-                <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
-                    {/* <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+                <section class="bg-transparent md:mt-12 pb-12 w-full ">
+                    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
+                        {/* <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                         <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo" />
                         NoTime
                     </a> */}
-                    <div class="w-full rounded-lg shadow md:mt-0  xl:p-0 bg-white bg-opacity-10">
-                        <div class="p-6 space-y-4 md:space-y-6 sm:p-8 w-full">
-                            <h1 class="text-xl text-center font-bold leading-tight tracking-tight md:text-2xl text-white">
-                                Enroll for the course
-                            </h1>
-                            <form onSubmit={handleSubmit(onSubmit)} class="space-y-4 md:gap-4 md:grid md:grid-cols-2 grid-cols-1 justify-center items-center ">
-                                <div>
-                                    <label for="name" class="block mb-2 text-sm font-medium text-white">Your Name</label>
-                                    <input {...register("name")} type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Your name" required />
-                                </div>
-                                <div>
-                                    <label for="email" class="block mb-2 text-sm font-medium text-white">Your email</label>
-                                    <input {...register("email")} type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Notime@gmail.com" required />
-                                </div>
-                                <div>
-                                    <label for="college" class="block mb-2 text-sm font-medium text-white">Your college</label>
-                                    <input {...register("college")} type="text" name="college" id="college" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="college" required />
-                                </div>
-                                {/* <div>
+                        <div class="w-full rounded-lg shadow md:mt-0  xl:p-0 bg-white bg-opacity-10">
+                            <div class="p-6 space-y-4 md:space-y-6 sm:p-8 w-full">
+                                <h1 class="text-xl text-center font-bold leading-tight tracking-tight md:text-2xl text-white">
+                                    Enroll for the course
+                                </h1>
+                                <form onSubmit={handleSubmit(onSubmit)} class="space-y-4 md:gap-4 md:grid md:grid-cols-2 grid-cols-1 justify-center items-center ">
+                                    <div>
+                                        <label for="name" class="block mb-2 text-sm font-medium text-white">Your Name</label>
+                                        <input {...register("name")} type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Your name" required />
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block mb-2 text-sm font-medium text-white">Your email</label>
+                                        <input {...register("email")} type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Notime@gmail.com" required />
+                                    </div>
+                                    <div>
+                                        <label for="college" class="block mb-2 text-sm font-medium text-white">Your college</label>
+                                        <input {...register("college")} type="text" name="college" id="college" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="college" required />
+                                    </div>
+                                    {/* <div>
                                         <label for="year" class="block mb-2 text-sm font-medium text-white">Year of Study</label>
                                         <input {...register("year")} type="text" name="year" id="year" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="year" required />
                                     </div>
@@ -141,61 +143,68 @@ return (
                                         <label for="branch" class="block mb-2 text-sm font-medium text-white">Branch of Study</label>
                                         <input {...register("branch")} type="text" name="branch" id="branch" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="IT / CS / EC etc" required />
                                     </div> */}
-                                <div>
-                                    <label for="linkedin" class="block mb-2 text-sm font-medium text-white">linkedin URL</label>
-                                    <input {...register("linkedin")} type="text" name="linkedin" id="linkedin" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="linkedin.com/" />
-                                </div>
-                                <div>
-                                    <label for="github" class="block mb-2 text-sm font-medium text-white">Github URL</label>
-                                    <input {...register("github")} type="text" name="github" id="github" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="https://github.com/" />
-                                </div>
-                                <div>
-                                    <label for="phone" class="block mb-2 text-sm font-medium text-white">Your WhatsApp number</label>
-                                    <input {...register("phone")} type="text" name="phone" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="+91" required />
-                                </div>
-                                <div className="col-span-2 flex justify-center items-center">
-                                    <button type="submit" class="w-1/3 text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-700 ">Enroll Now</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                                    <div>
+                                        <label for="linkedin" class="block mb-2 text-sm font-medium text-white">linkedin URL</label>
+                                        <input {...register("linkedin")} type="text" name="linkedin" id="linkedin" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="linkedin.com/" />
+                                    </div>
+                                    <div>
+                                        <label for="github" class="block mb-2 text-sm font-medium text-white">Github URL</label>
+                                        <input {...register("github")} type="text" name="github" id="github" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="https://github.com/" />
+                                    </div>
+                                    <div>
+                                        <label for="phone" class="block mb-2 text-sm font-medium text-white">Your WhatsApp number</label>
+                                        <input {...register("phone")} type="text" name="phone" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="+91" required />
+                                    </div>
+                                    <div className="col-span-2 flex justify-center items-center">
+                                        {
+                                            Disable ? (
+                                                <button disabled type="submit" class="w-1/3 text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-700 ">Enrolling...</button>
 
-        </div>
-
-        {/* success model */}
-        {
-            successModal && (
-                <div id="successModal" tabindex="-1" aria-hidden="true" class="w-full h-screen bg-black bg-opacity-80 overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center">
-                    <div class="flex justify-center items-center relative p-4 w-full max-w-md h-full md:h-auto">
-                        <div class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
-                            <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 p-2 flex items-center justify-center mx-auto mb-3.5">
-                                <svg aria-hidden="true" class="w-8 h-8 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                <span class="sr-only">Success</span>
+                                            ) : (
+                                                <button type="submit" class="w-1/3 text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-700 ">Enroll Now</button>
+                                            )
+                                        }
+                                    </div>
+                                </form>
                             </div>
-                            <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Successfully registered for the course.</p>
-                            {/* show a redirecting content and show it as a timer */}
-                            <p class="mb-4 text-sm font-semibold text-gray-900 dark:text-white">Redirecting in {timer} seconds...</p>
                         </div>
                     </div>
-                </div>
-            )
-        }
-        {
-            RegisteringModal && (
-                <div id="successModal" tabindex="-1" aria-hidden="true" class="w-full h-screen bg-black bg-opacity-80 overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center">
-                    <div class="flex justify-center items-center relative p-4 w-full max-w-md h-full md:h-auto">
-                        <div class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
-                            <span className="text-3xl loading loading-lg loading-spinner text-info mb-4"></span>
-                            <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Registering you for the course.</p>
+                </section>
+
+            </div>
+
+            {/* success model */}
+            {
+                successModal && (
+                    <div id="successModal" tabindex="-1" aria-hidden="true" class="w-full h-screen bg-black bg-opacity-80 overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center">
+                        <div class="flex justify-center items-center relative p-4 w-full max-w-md h-full md:h-auto">
+                            <div class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
+                                <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 p-2 flex items-center justify-center mx-auto mb-3.5">
+                                    <svg aria-hidden="true" class="w-8 h-8 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                    <span class="sr-only">Success</span>
+                                </div>
+                                <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Successfully registered for the course.</p>
+                                {/* show a redirecting content and show it as a timer */}
+                                <p class="mb-4 text-sm font-semibold text-gray-900 dark:text-white">Redirecting in {timer} seconds...</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            )
-        }
-    </div>
-)
+                )
+            }
+            {
+                RegisteringModal && (
+                    <div id="successModal" tabindex="-1" aria-hidden="true" class="w-full h-screen bg-black bg-opacity-80 overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center">
+                        <div class="flex justify-center items-center relative p-4 w-full max-w-md h-full md:h-auto">
+                            <div class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
+                                <span className="text-3xl loading loading-lg loading-spinner text-info mb-4"></span>
+                                <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Registering you for the course.</p>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+        </div>
+    )
 };
 
 // export async function getServerSideProps(context) {

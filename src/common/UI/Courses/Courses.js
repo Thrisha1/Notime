@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar.jsx"
 import Courselist from "../../components/Courselist.jsx"
 import Footer from '../../components/Footer.jsx'
@@ -28,13 +28,13 @@ const Courses = () => {
       .then((data) => {
         console.log('Fetched data:', data);
         setCourses(data);
-      })
+      })  
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
   }, []);
 
-  
+
 
   return (
     <div className="overflow-x-hidden">
