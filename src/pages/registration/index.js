@@ -145,11 +145,11 @@ const Index = () => {
                                     </div> */}
                                     <div>
                                         <label for="linkedin" class="block mb-2 text-sm font-medium text-white">linkedin URL</label>
-                                        <input {...register("linkedin")} type="text" name="linkedin" id="linkedin" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="linkedin.com/" />
+                                        <input {...register("linkedin")} type="text" name="linkedin" id="linkedin" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="linkedin.com/ (optional)" />
                                     </div>
                                     <div>
                                         <label for="github" class="block mb-2 text-sm font-medium text-white">Github URL</label>
-                                        <input {...register("github")} type="text" name="github" id="github" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="https://github.com/" />
+                                        <input {...register("github")} type="text" name="github" id="github" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="https://github.com/  (optional)" />
                                     </div>
                                     <div>
                                         <label for="phone" class="block mb-2 text-sm font-medium text-white">Your WhatsApp number</label>

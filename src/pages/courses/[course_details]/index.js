@@ -14,6 +14,8 @@ import { useRouter } from 'next/navigation'
 
 const index = ({ course }) => {
 
+    console.log("index", course)
+
     return (
         <div className='overflow-x-hidden'>
             <Navbar />
@@ -78,8 +80,8 @@ const index = ({ course }) => {
                                         course.mentors.map((mentor) => (
 
                                             <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                                                {/* <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full"
-                                                    src="/assets/me.jpg" alt="Jese Leos" /> */}
+                                                <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full"
+                                                    src="/assets/me.jpg" alt="Jese Leos" />
                                                 <div>
                                                     <a href="#" rel="author" class="text-xl font-bold text-white">{mentor.name}</a>
                                                     <p class="text-base text-gray-500 dark:text-gray-400">{mentor.designation}</p>
