@@ -81,7 +81,7 @@ const index = ({ course }) => {
 
                                             <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                                                 <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full"
-                                                    src="/assets/me.jpg" alt="Jese Leos" />
+                                                    src={mentor.photo?.asset.url} alt="Jese Leos" />
                                                 <div>
                                                     <a href="#" rel="author" class="text-xl font-bold text-white">{mentor.name}</a>
                                                     <p class="text-base text-gray-500 dark:text-gray-400">{mentor.designation}</p>
@@ -134,18 +134,32 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const { course_details } = params;
-    const query = `*[_type == "course" && slug.current == $slug][0]`;
+    const query = `*[_type == "course" && slug.current == $slug][0] {
+      title,
+      slug,
+      description,
+      courseImage {
+        asset -> {
+          _id,
+          url
+        }
+      },
+      learningObjectives,
+      topics,
+      prerequisites,
+      mentors
+    }`;
     const paramsObject = { slug: course_details };
-
+  
     const course = await client.fetch(query, paramsObject);
-
-    console.log("course : ", course)
-
+  
+    console.log("course: ", course);
+  
     return {
-        props: {
-            course,
-        },
+      props: {
+        course,
+      },
     };
-}
+  }
 
 export default index
