@@ -77,9 +77,9 @@ const index = ({ course }) => {
                                 <address
                                     class="flex flex-wrap items-center lg:justify-start justify-center gap-6 mb-6 not-italic">
                                     {
-                                        course.mentors.map((mentor) => (
+                                        course.mentors.map((mentor,index) => (
 
-                                            <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+                                            <div key={index} class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                                                 <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full"
                                                     src={mentor.photo?.asset.url} alt="Jese Leos" />
                                                 <div>
