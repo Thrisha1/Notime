@@ -246,7 +246,7 @@ export async function getStaticProps({ params }) {
 
     const course = await client.fetch(query, paramsObject);
 
-    console.log("course: ", course);
+    // console.log("course: ", course);
 
     return {
         props: {
