@@ -95,7 +95,7 @@ const Index = ({ course }) => {
 
                             {/* main heading */}
                             <div
-                                className='flex lg:gap-0 gap-9 lg:flex-row flex-col justify-between lg:items-start items-center'>
+                                className='flex lg:gap-0 gap-9 lg:flex-row flex-col-reverse justify-between lg:items-start items-center'>
                                 <div className='lg:w-2/4'>
                                     <h1 class="mb-4 text-3xl font-extrabold leading-tight  lg:mb-6 lg:text-4xl text-white">{course?.title}</h1>
                                     <p class="text-lg mb-3">{course?.description}</p>
@@ -187,16 +187,32 @@ const Index = ({ course }) => {
                                     <div className="px-5 pb-5">
 
                                         <div className='flex flex-col gap-2'>
-                                            <div className="text-white bg-black bg-opacity-20 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-normal rounded-lg text-sm px-5 py-2.5 text-center flex justify-around gap-12 items-center">
-                                                <h1>Now At <span className='text-red-600 font-black text-xl bg-white p-1 mx-2 rounded-md'><span className='font-normal text-xl ml-1 '>₹</span>3,999</span><span className='line-through text-gray-300 text-sm ml-1'>₹ 5,999</span> </h1><span className='text-blue-500 font-bold '>33% off</span>
+                                            <div className="text-white bg-black bg-opacity-20 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-normal rounded-lg text-sm sm:px-5 px-1 py-2.5 text-center flex xs:flex-row flex-col justify-around xs:gap-12 gap-3 items-center">
+                                                <h1>
+                                                    Now At
+                                                    <span className='text-red-600 font-black text-xl bg-white p-1 mx-2 rounded-md'>
+                                                        <span className='font-normal text-xl ml-1 '>₹</span>
+                                                        3,999
+                                                    </span>
+                                                    <span className='line-through text-gray-300 text-sm ml-1'>
+                                                        ₹ 5,999
+                                                    </span>
+                                                </h1>
+                                                <span className='text-blue-500 font-bold '>33% off</span>
                                             </div>
                                             <Link href="/registration"
                                                 className="text-white bg-blue-700 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Enroll Now</Link>
-                                                <span className='text-center text-sm'>
-                                                    Register Now and pay before February 2nd 2024
-                                                </span>
-                                            <span className="text-md text-center text-gray-300">Registration ends in :
-                                                <span className="text-md text-center text-gray-300 px-2">{remainingTime.days} d {remainingTime.hours} hrs {remainingTime.minutes} min {remainingTime.seconds} sec</span></span>
+                                            <span className='text-center text-sm'>
+                                                Register Now and pay before February 2nd 2024
+                                            </span>
+                                            <span className="text-md text-center text-gray-300">Registration ends in <br></br><br></br>
+                                                <div className='flex flex-wrap justify-center gap-4 font-bold' >
+                                                    <span className="flex-1 flex-col text-md text-center text-blue-600 bg-white p-2 rounded-lg "><span className='text-2xl'>{remainingTime.days}</span> <br></br> days</span>
+                                                    <span className="flex-1 text-md text-center text-blue-600 bg-white p-2 rounded-lg "><span className='text-2xl'>{remainingTime.hours}</span> <br></br> hours</span>
+                                                    <span className="flex-1 text-md text-center text-blue-600 bg-white p-2 rounded-lg "><span className='text-2xl'>{remainingTime.minutes}</span> <br></br> minutes</span>
+                                                    <span className="flex-1 text-md text-center text-blue-600 bg-white p-2 rounded-lg "><span className='text-2xl'>{remainingTime.seconds}</span> <br></br> seconds</span>
+                                                </div>
+                                            </span>
                                             <span className="mt-8 text-xl font-bold  text-white">This Course will include : </span>
                                             <div className='flex flex-col gap-3'>
                                                 {course?.topics?.map((e, index) => (
