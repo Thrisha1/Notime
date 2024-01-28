@@ -192,6 +192,9 @@ const Index = ({ course }) => {
                                             </div>
                                             <Link href="/registration"
                                                 className="text-white bg-blue-700 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Enroll Now</Link>
+                                                <span className='text-center text-sm'>
+                                                    Register Now and pay before February 2nd 2024
+                                                </span>
                                             <span className="text-md text-center text-gray-300">Registration ends in :
                                                 <span className="text-md text-center text-gray-300 px-2">{remainingTime.days} d {remainingTime.hours} hrs {remainingTime.minutes} min {remainingTime.seconds} sec</span></span>
                                             <span className="mt-8 text-xl font-bold  text-white">This Course will include : </span>
