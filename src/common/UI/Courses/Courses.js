@@ -4,35 +4,36 @@ import Courselist from "../../components/Courselist.jsx"
 import Footer from '../../components/Footer.jsx'
 import { client } from "../../../../sanity/lib/client.js";
 
-const Courses = () => {
-  const [courses, setCourses] = useState([]);
-  const query = `*[_type == "course"] {
-      title,
-      slug,
-      description,
-      courseImage {
-        asset -> {
-          _id,
-          url
-        }
-      },
-      learningObjectives,
-      topics,
-      prerequisites,
-      mentors
-    }`;
+const Courses = ({courseList}) => {
+  console.log("courseList is : " + courseList)
+  // const [courses, setCourses] = useState([]);
+  // const query = `*[_type == "course"] {
+  //     title,
+  //     slug,
+  //     description,
+  //     courseImage {
+  //       asset -> {
+  //         _id,
+  //         url
+  //       }
+  //     },
+  //     learningObjectives,
+  //     topics,
+  //     prerequisites,
+  //     mentors
+  //   }`;
 
 
-  useEffect(() => {
-    client.fetch(query)
-      .then((data) => {
-        console.log('Fetched data:', data);
-        setCourses(data);
-      })  
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   client.fetch(query)
+  //     .then((data) => {
+  //       console.log('Fetched data:', data);
+  //       setCourses(data);
+  //     })  
+  //     .catch((error) => {
+  //       console.error('Error fetching data:', error);
+  //     });
+  // }, []);
 
 
 
@@ -45,7 +46,7 @@ const Courses = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-7 mx-10  gap-5 ">
 
-        {courses?.map((course, index) => (
+        {courseList?.map((course, index) => (
 
           <Courselist key={index} courseData={course} />
         ))}
@@ -59,5 +60,6 @@ const Courses = () => {
 
   );
 };
+
 
 export default Courses;
