@@ -14,6 +14,8 @@ import { useRouter } from 'next/navigation'
 
 const index = ({ course }) => {
 
+    const course_url = course.courseImage.asset.url;
+    console.log(course_url)
     return (
         <div className='overflow-x-hidden'>
             <Navbar />
