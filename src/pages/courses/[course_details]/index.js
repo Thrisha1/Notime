@@ -9,9 +9,53 @@ import Feature from "../../../common/components/Feature";
 // sanity from client.js
 import { client } from "../../../../sanity/lib/client";
 import Profile_placeholder from "../../../../public/assets/placeholder_profile.webp"
+import CourseDos from '../../../common/components/CourseDos.jsx';
 
 
 const index = ({ course }) => {
+
+    const TodoOutcome = {
+        "heading": "Project 1 : Creative Todo",
+        "type": "list",
+        "points":
+            [
+                "Task managing",
+                "Bookmarking",
+                "Archiving",
+                "Mark as Done",
+                "Drag and Drop",
+                "Dark Mode",
+                "Responsive",
+            ]
+    }
+
+    const movieFeatures = {
+        "heading": "Movie App",
+        "type": "list",
+        "points":
+            [
+                'Movie list',
+                'Movie Search',
+                'Movie Details',
+                'Movie Rating',
+                'Movie Bookmarking',
+                'Movie Trailer',
+                'Dark Mode',
+                'Responsive'
+            ]
+    };
+
+    const semiHack = {
+        "heading": "Semi-Hackathon",
+        "type": "para",
+        "points": "Participate in a semi-hackathon where you have the freedom to build your own ideas! Within 12 hours,unleash your creativity and apply the skills learned throughout the course to develop a unique and exciting project."
+    };
+
+    const freelance = {
+        "heading": "Get into Freelance",
+        "type": "para",
+        "points": "Launch your freelance web development career by building a personalized portfolio website, simulating client interactions, and exploring payment integration. Gain valuable insights into SEO optimization and freelance success to position yourself for a thriving career in the dynamic world of web development."
+    };
 
     const [remainingTime, setRemainingTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
@@ -72,51 +116,54 @@ const index = ({ course }) => {
                                         </div>
 
                                     </div>
-                                        <h2 class="mb-5 mt-10 text-2xl font-extrabold tracking-tight text-white">What will you do</h2>
-                                    <div className="my-10 w-full  grid md:grid-cols-2 grid-cols-1 gap-10 hover:text-black ">
+                                    <h2 class="mb-5 mt-10 text-2xl font-extrabold tracking-tight text-white">What will you do</h2>
+
+
+
+                                    {/* <div className="my-10 w-full  grid md:grid-cols-2 grid-cols-1 gap-10 hover:text-black ">
                                         <a href="#"
-                                           className="block max-w-sm p-6 bg-gray-600 bg-opacity-50 border border-gray-200 rounded-lg shadow  ">
+                                            className="block max-w-sm p-6 bg-gray-600 bg-opacity-50 border border-gray-200 rounded-lg shadow  ">
 
-                                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white ">Creative Todo</h5>
-                                            <ul type="disk" class="list-disc list-inside font-normal text-white ">
-                                                <li>Task managing</li>
-                                                <li>Bookmarking</li>
-                                                <li>Archiving</li>
-                                                <li>Mark as Done</li>
-                                                <li>Drag and Drop</li>
-                                                <li>Dark Mode</li>
-                                                <li>Responsive</li>
-
+                                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white underline underline-offset-8 ">Creative Todo</h5>
+                                            <ul class=" list-inside font-normal text-white ">
+                                                {TodoOutcome.points?.map((e, index) => (
+                                                    <li key={index} class="flex space-x-2 items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811V8.69ZM12.75 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061a1.125 1.125 0 0 1-1.683-.977V8.69Z" />
+                                                        </svg>
+                                                        <span class="leading-tight">{e}</span>
+                                                    </li>
+                                                ))}
                                             </ul>
                                         </a>
                                         <a href="#"
-                                           className="block max-w-sm p-6 bg-gray-600 bg-opacity-50 border border-gray-200 rounded-lg shadow">
+                                            className="block max-w-sm p-6 bg-gray-600 bg-opacity-50 border border-gray-200 rounded-lg shadow">
 
-                                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Movie App</h5>
-                                            <ul type="disk" class="list-disc list-inside font-normal text-white">
-                                                <li>Movie list</li>
-                                                <li>Movie Search</li>
-                                                <li>Movie Details</li>
-                                                <li>Movie Rating</li>
-                                                <li>Movie Bookmarking</li>
-                                                <li>Movie Trailer</li>
-                                                <li>Dark Mode</li>
-                                                <li>Responsive</li>
+                                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white underline underline-offset-8">Movie App</h5>
+                                            <ul type="disk" class="list-inside font-normal text-white">
+                                                {movieFeatures.points?.map((e, index) => (
+                                                    <li key={index} class="flex space-x-2 items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811V8.69ZM12.75 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061a1.125 1.125 0 0 1-1.683-.977V8.69Z" />
+                                                        </svg>
+                                                        <span class="leading-tight">{e}</span>
+                                                    </li>
+                                                ))}
                                             </ul>
                                         </a>
                                         <a href="#"
-                                           className="block max-w-sm p-6 bg-gray-600 bg-opacity-50 border border-gray-200 rounded-lg shadow ">
+                                            className="block max-w-sm p-6 bg-gray-600 bg-opacity-50 border border-gray-200 rounded-lg shadow ">
 
-                                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Semi-Hackathon</h5>
+                                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white underline underline-offset-8">Semi-Hackathon</h5>
                                             <p type="disk" class="font-normal text-white">
                                                 Participate in a semi-hackathon where you have the freedom to build your own ideas! Within 12 hours,
                                                 unleash your creativity and apply the skills learned throughout the course to develop a unique and exciting project.
                                             </p>
                                         </a>
                                         <a href="#"
-                                           className="block max-w-sm p-6 bg-gray-600 bg-opacity-50 border border-gray-200 rounded-lg shadow ">
+                                            className="block max-w-sm p-6 bg-gray-600 bg-opacity-50 border border-gray-200 rounded-lg shadow ">
 
-                                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Get into Freelance</h5>
+                                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white underline underline-offset-8">Get into Freelance</h5>
                                             <p type="disk" class="font-normal text-white">
                                                 Launch your freelance web development career by building a personalized portfolio website, simulating client interactions,
                                                 and exploring payment integration. Gain valuable insights into SEO optimization and freelance success
@@ -124,6 +171,13 @@ const index = ({ course }) => {
                                             </p>
                                         </a>
 
+                                    </div> */}
+
+                                    <div className="flex flex-col gap-4">
+                                        <CourseDos datas={TodoOutcome} />
+                                        <CourseDos datas={movieFeatures} />
+                                        <CourseDos datas={semiHack} />
+                                        <CourseDos datas={freelance} />
                                     </div>
                                 </div>
                                 {/* course card */}
@@ -139,7 +193,7 @@ const index = ({ course }) => {
                                             <Link href="/registration"
                                                 className="text-white bg-blue-700 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Enroll Now</Link>
                                             <span className="text-md text-center text-gray-300">Registration ends in :
-                                            <span className="text-md text-center text-gray-300 px-2">{remainingTime.days} d {remainingTime.hours} hrs {remainingTime.minutes} min {remainingTime.seconds} sec</span></span>
+                                                <span className="text-md text-center text-gray-300 px-2">{remainingTime.days} d {remainingTime.hours} hrs {remainingTime.minutes} min {remainingTime.seconds} sec</span></span>
                                             <span className="mt-8 text-xl font-bold  text-white">This Course will include : </span>
                                             <div className='flex flex-col gap-3'>
                                                 {course?.topics?.map((e, index) => (
@@ -152,6 +206,7 @@ const index = ({ course }) => {
 
                                 {/* <Image width={300} height={300} className='w-96 h-56 mb-8' src="/assets/django.png" alt="" /> */}
                             </div>
+
 
                             <h1 class="my-8 lg:text-left text-center text-xl font-extrabold leading-tight  lg:mb-6 lg:text-2xl text-white">Meet
                                 your mentors</h1>
