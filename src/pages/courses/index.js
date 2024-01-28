@@ -26,16 +26,6 @@ export async function getStaticProps() {
     learningObjectives,
     topics,
     prerequisites,
-    mentors {
-      name,
-      designation
-      photo {
-        asset -> {
-          _id,
-          url
-        }
-      }
-    }
   }`;
 
   try {

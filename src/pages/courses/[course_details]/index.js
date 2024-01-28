@@ -8,8 +8,7 @@ import Tick from './Tick.jsx'
 import Feature from "../../../common/components/Feature";
 // sanity from client.js
 import { client } from "../../../../sanity/lib/client";
-import { course } from '../../../../sanity/schemas/course'
-import { useRouter } from 'next/navigation'
+import Profile_placeholder from "../../../../public/assets/placeholder_profile.webp"
 
 
 const index = ({ course }) => {
@@ -20,7 +19,7 @@ const index = ({ course }) => {
         <div className='overflow-x-hidden'>
             <Navbar />
             {course && (
-                <div key={course.slug} class="pt-8 pb-16 lg:pt-10 lg:pb-24 bg-transparent">
+                <div key={course?.slug} class="pt-8 pb-16 lg:pt-10 lg:pb-24 bg-transparent">
                     <div class="flex justify-between px-4 mx-auto max-w-screen-xl">
                         <article class="mx-auto w-full text-white">
 
@@ -77,11 +76,18 @@ const index = ({ course }) => {
                                 <address
                                     class="flex flex-wrap items-center lg:justify-start justify-center gap-6 mb-6 not-italic">
                                     {
-                                        course.mentors.map((mentor,index) => (
+                                        course?.mentors?.map((mentor, index) => (
 
                                             <div key={index} class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                                                <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full"
-                                                    src={mentor.photo?.asset.url} alt="Jese Leos" />
+                                                {
+                                                    mentor?.imageUrl ? (
+                                                        <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full"
+                                                            src={mentor?.imageUrl} alt="Jese Leos" />
+                                                    ) : (
+                                                        <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full"
+                                                        src={Profile_placeholder} alt="Jese Leos" /> 
+                                                    )
+                                                }
                                                 <div>
                                                     <a href="#" rel="author" class="text-xl font-bold text-white">{mentor.name}</a>
                                                     <p class="text-base text-gray-500 dark:text-gray-400">{mentor.designation}</p>
@@ -135,31 +141,35 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const { course_details } = params;
     const query = `*[_type == "course" && slug.current == $slug][0] {
-      title,
-      slug,
-      description,
-      courseImage {
-        asset -> {
-          _id,
-          url
-        }
-      },
-      learningObjectives,
-      topics,
-      prerequisites,
-      mentors
-    }`;
+        title,
+        slug,
+        description,
+        courseImage {
+          asset -> {
+            _id,
+            url
+          }
+        },
+        learningObjectives,
+        topics,
+        prerequisites,
+        mentors[] {
+            name,
+            designation,
+            "imageUrl": photo.asset->url
+          }
+      }`;
     const paramsObject = { slug: course_details };
-  
+
     const course = await client.fetch(query, paramsObject);
-  
+
     console.log("course: ", course);
-  
+
     return {
-      props: {
-        course,
-      },
+        props: {
+            course,
+        },
     };
-  }
+}
 
 export default index
