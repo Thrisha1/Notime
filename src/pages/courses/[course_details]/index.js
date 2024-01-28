@@ -49,7 +49,7 @@ const index = ({ course }) => {
                                 {/* course card */}
                                 <div className="w-full max-w-sm rounded-lg shadow bg-gray-600 bg-opacity-50">
                                     <Image width={500} height={100} className="p-8 rounded-t-lg"
-                                        src="/assets/Courses/images/Reactjs.svg" alt="product image" />
+                                        src={course.courseImage.asset.url} alt="product image" />
                                     <div className="px-5 pb-5">
 
                                         <div className='flex flex-col gap-2'>
