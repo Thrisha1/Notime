@@ -109,7 +109,18 @@ const index = ({ course }) => {
 
                                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Semi-Hackathon</h5>
                                             <p type="disk" class="font-normal text-white">
-                                                Participate in a semi-hackathon where you have the freedom to build your own ideas! Within 12 hours, unleash your creativity and apply the skills learned throughout the course to develop a unique and exciting project.
+                                                Participate in a semi-hackathon where you have the freedom to build your own ideas! Within 12 hours,
+                                                unleash your creativity and apply the skills learned throughout the course to develop a unique and exciting project.
+                                            </p>
+                                        </a>
+                                        <a href="#"
+                                           className="block max-w-sm p-6 bg-gray-600 bg-opacity-50 border border-gray-200 rounded-lg shadow ">
+
+                                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Get into Freelance</h5>
+                                            <p type="disk" class="font-normal text-white">
+                                                Launch your freelance web development career by building a personalized portfolio website, simulating client interactions,
+                                                and exploring payment integration. Gain valuable insights into SEO optimization and freelance success
+                                                to position yourself for a thriving career in the dynamic world of web development.
                                             </p>
                                         </a>
 
@@ -123,13 +134,12 @@ const index = ({ course }) => {
 
                                         <div className='flex flex-col gap-2'>
                                             <div className="text-white bg-black bg-opacity-20 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-normal rounded-lg text-sm px-5 py-2.5 text-center flex justify-around gap-12 items-center">
-                                                <h1>Now At <span className='text-red-600 font-black text-xl'><span className='font-normal text-xl ml-1'>₹</span>3,999</span><span className='line-through text-gray-300 text-sm ml-1'>₹ 5,999</span> </h1><span className='text-blue-700'>33% off</span>
+                                                <h1>Now At <span className='text-red-600 font-black text-xl bg-white p-1 mx-2 rounded-md'><span className='font-normal text-xl ml-1 '>₹</span>3,999</span><span className='line-through text-gray-300 text-sm ml-1'>₹ 5,999</span> </h1><span className='text-blue-500 font-bold '>33% off</span>
                                             </div>
                                             <Link href="/registration"
-                                                className="text-white bg-blue-700 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Register
-                                                for Course</Link>
-                                            <span className="text-lg text-center text-white">Registration ends in :</span>
-                                            <span className="text-lg text-center text-white">{remainingTime.days} d</span>
+                                                className="text-white bg-blue-700 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Enroll Now</Link>
+                                            <span className="text-md text-center text-gray-300">Registration ends in :
+                                            <span className="text-md text-center text-gray-300 px-2">{remainingTime.days} d {remainingTime.hours} hrs {remainingTime.minutes} min {remainingTime.seconds} sec</span></span>
                                             <span className="mt-8 text-xl font-bold  text-white">This Course will include : </span>
                                             <div className='flex flex-col gap-3'>
                                                 {course?.topics?.map((e, index) => (
