@@ -12,7 +12,7 @@ import Profile_placeholder from "../../../../public/assets/placeholder_profile.w
 import CourseDos from '../../../common/components/CourseDos.jsx';
 
 
-const index = ({ course }) => {
+const Index = ({ course }) => {
 
     const TodoOutcome = {
         "heading": "Project 1 : Creative Todo",
@@ -310,4 +310,4 @@ export async function getStaticProps({ params }) {
     };
 }
 
-export default index
+export default Index
