@@ -23,9 +23,6 @@ export async function getStaticProps() {
         url
       }
     },
-    learningObjectives,
-    topics,
-    prerequisites,
   }`;
 
   try {
