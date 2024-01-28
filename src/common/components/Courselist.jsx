@@ -31,7 +31,7 @@ function Courselist({ courseData }) {
         height={100}
         src={imageUrl}
         className=" w-32 h-28 md:h-44 md:w-44 rounded-3xl "
-        alt={name}
+        alt={"image"}
       />
       <div className="flex text-wrap xs:h-32 md:h-44 justify-around items-center xs:items-start flex-col xs:ml-5 md:ml-10 text-sm text-white font-monospace gap-4 xs:gap-y-2">
         <p className="text-lg md:text-xl font-semibold tracking-widest text-wrap">
