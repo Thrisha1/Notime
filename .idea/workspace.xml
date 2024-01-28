@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2eb3bad4-ecd4-46b7-8ea7-46097ef4060a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/placeholder_profile.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/UI/Courses/Courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/UI/Courses/Courses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/Courselist.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Courselist.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/courses/[course_details]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courses/[course_details]/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/courses/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courses/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/registration/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/registration/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +71,7 @@
       <workItem from="1704087069871" duration="19000" />
       <workItem from="1704120634182" duration="1645000" />
       <workItem from="1704165566844" duration="2660000" />
-      <workItem from="1706423743541" duration="3683000" />
+      <workItem from="1706423743541" duration="6169000" />
     </task>
     <servers />
   </component>

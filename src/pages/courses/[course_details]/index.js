@@ -44,6 +44,49 @@ const index = ({ course }) => {
 
                                             </ul>
                                         </div>
+
+                                    </div>
+                                        <h2 class="mb-5 mt-10 text-2xl font-extrabold tracking-tight text-white">What will you do</h2>
+                                    <div className="my-10 w-full  grid md:grid-cols-2 grid-cols-1 gap-10 hover:text-black ">
+                                        <a href="#"
+                                           className="block max-w-sm p-6 bg-gray-600 bg-opacity-50 border border-gray-200 rounded-lg shadow  ">
+
+                                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white ">Creative Todo</h5>
+                                            <ul type="disk" class="list-disc list-inside font-normal text-white ">
+                                                <li>Task managing</li>
+                                                <li>Bookmarking</li>
+                                                <li>Archiving</li>
+                                                <li>Mark as Done</li>
+                                                <li>Drag and Drop</li>
+                                                <li>Dark Mode</li>
+                                                <li>Responsive</li>
+
+                                            </ul>
+                                        </a>
+                                        <a href="#"
+                                           className="block max-w-sm p-6 bg-gray-600 bg-opacity-50 border border-gray-200 rounded-lg shadow">
+
+                                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Movie App</h5>
+                                            <ul type="disk" class="list-disc list-inside font-normal text-white">
+                                                <li>Movie list</li>
+                                                <li>Movie Search</li>
+                                                <li>Movie Details</li>
+                                                <li>Movie Rating</li>
+                                                <li>Movie Bookmarking</li>
+                                                <li>Movie Trailer</li>
+                                                <li>Dark Mode</li>
+                                                <li>Responsive</li>
+                                            </ul>
+                                        </a>
+                                        <a href="#"
+                                           className="block max-w-sm p-6 bg-gray-600 bg-opacity-50 border border-gray-200 rounded-lg shadow ">
+
+                                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Semi-Hackathon</h5>
+                                            <p type="disk" class="font-normal text-white">
+                                                Participate in a semi-hackathon where you have the freedom to build your own ideas! Within 12 hours, unleash your creativity and apply the skills learned throughout the course to develop a unique and exciting project.
+                                            </p>
+                                        </a>
+
                                     </div>
                                 </div>
                                 {/* course card */}
