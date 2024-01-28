@@ -13,6 +13,32 @@ import Profile_placeholder from "../../../../public/assets/placeholder_profile.w
 
 const index = ({ course }) => {
 
+    const [remainingTime, setRemainingTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+    useEffect(() => {
+        const registrationEndTime = new Date("2024-02-01T23:59:59"); // Replace with your actual registration end time
+        const interval = setInterval(() => {
+            const currentTime = new Date();
+            const timeDifference = registrationEndTime - currentTime;
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            setRemainingTime({ days, hours, minutes, seconds });
+
+            if (timeDifference < 0) {
+                clearInterval(interval);
+                setRemainingTime({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+            }
+        }, 1000);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
+
     console.log("index", course)
 
     return (
@@ -53,10 +79,14 @@ const index = ({ course }) => {
                                     <div className="px-5 pb-5">
 
                                         <div className='flex flex-col gap-2'>
-                                            {/* <span className="text-3xl font-bold text-white">₹500</span> */}
+                                            <div className="text-white bg-black bg-opacity-20 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-normal rounded-lg text-sm px-5 py-2.5 text-center flex justify-around gap-12 items-center">
+                                                <h1>Now At <span className='text-red-600 font-black text-xl'><span className='font-normal text-xl ml-1'>₹</span>3,999</span><span className='line-through text-gray-300 text-sm ml-1'>₹ 5,999</span> </h1><span className='text-blue-700'>33% off</span>
+                                            </div>
                                             <Link href="/registration"
                                                 className="text-white bg-blue-700 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Register
                                                 for Course</Link>
+                                            <span className="text-lg text-center text-white">Registration ends in :</span>
+                                            <span className="text-lg text-center text-white">{remainingTime.days} d</span>
                                             <span className="mt-8 text-xl font-bold  text-white">This Course will include : </span>
                                             <div className='flex flex-col gap-3'>
                                                 {course?.topics?.map((e, index) => (
@@ -85,7 +115,7 @@ const index = ({ course }) => {
                                                             src={mentor?.imageUrl} alt="Jese Leos" />
                                                     ) : (
                                                         <Image width={100} height={100} class="mr-4 w-16 h-16 rounded-full"
-                                                        src={Profile_placeholder} alt="Jese Leos" /> 
+                                                            src={Profile_placeholder} alt="Jese Leos" />
                                                     )
                                                 }
                                                 <div>
