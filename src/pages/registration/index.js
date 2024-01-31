@@ -35,7 +35,7 @@ const Index = () => {
           ]);
 
         const { data, error } = await supabase
-            .from('mern_stack')
+            .from('mern_stack2')
             .upsert(
                 datas
             )
