@@ -16,56 +16,23 @@ const Index = () => {
     const router = useRouter();
     const { data: session } = useSession();
 
-    // var base = new Airtable({ apiKey: process.env.NEXT_PUBLIC_airtable_api }).base('app6CHsYoG1ehpXei');
+    var base = new Airtable({ apiKey: process.env.NEXT_PUBLIC_airtable_api }).base('app6CHsYoG1ehpXei');
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = async (datas) => {
         setDisable(!Disable);
-        // try {
-        // console.log(data);
-        // setRegisteringModal(true);
-        // // now we have the experience data and then email of user from session now using the data from email search a user in the table students and the update the courses column which is a json which is an array of objects the first is course_name then entrolled_at which is auto generated at the current time and prior_exp which is experience data the data is set in supabase
 
-        // const { data: userData, error: userError } = await supabase
-        //     .from('students')
-        //     .select('id, courses')
-        //     .eq('email', session.user.email)
-        //     .single();
-
-        // if (userError) {
-        //     throw userError;
-        // }
-
-        // If the user is found, update the "courses" column
-        // const courseName = localStorage.getItem('courseName');
-        // if (userData) {
-        //     const updatedCourses = [
-        //         ...userData.courses,
-        //         {
-        //             course_name: courseName, // Use the subject from Redux
-        //             enrolled_at: new Date().toISOString(),
-        //             prior_exp: data.experience,
-        //         },
-        //     ];
-
-        //     // Update the user's record with the new course information
-        //     const { error: updateError } = await supabase
-        //         .from('students')
-        //         .update({ courses: updatedCourses })
-        //         .eq('id', userData.id);
-
-        //     if (updateError) {
-        //         throw updateError;
-        //     }
-
-        // Your existing code for success modal, timer, etc.
-
-        // Redirect to the courses page
-        //     setTimeout(() => {
-        //         setSuccessModal(false);
-        //         router.push('/courses');
-        //     }, 3000);
-        // }
-
+        await base('mern_stack').create([
+            {
+              fields: {
+                Name: datas.name,
+                Email: datas.email,
+                College: datas.college,
+                Phone : datas.phone,
+                linkedin : datas.linkedin,
+                github : datas.github,
+              },
+            },
+          ]);
 
         const { data, error } = await supabase
             .from('mern_stack')
