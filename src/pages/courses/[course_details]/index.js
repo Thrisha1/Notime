@@ -218,7 +218,7 @@ const Index = ({ course }) => {
                                                         </span>
                                                     </h1>
                                                     <h1 className='self-start font-bold'>
-                                                        For three student <br></br> <br></br>
+                                                        For three students <br></br> <br></br>
                                                     </h1>
                                                     <span className='animate-pulse text-red-500 border-2 p-1 bg-white font-bold rounded-lg'>special offer</span>
                                                 </div>
