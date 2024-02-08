@@ -188,16 +188,40 @@ const Index = ({ course }) => {
 
                                         <div className='flex flex-col gap-2'>
                                             <div className="text-white bg-black bg-opacity-20 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-normal rounded-lg text-sm sm:px-5 px-1 py-2.5 text-center flex xs:flex-row flex-col justify-around xs:gap-12 gap-3 items-center">
-                                                <h1>
-                                                    Now At
-                                                    <span className='text-red-600 font-black text-xl bg-white p-1 mx-2 rounded-md'>
-                                                        <span className='font-normal text-xl ml-1 '>₹</span>
-                                                        3,999
-                                                    </span>
-                                                    <span className='line-through text-gray-300 text-sm ml-1'>
-                                                        ₹ 5,999
-                                                    </span>
-                                                </h1>
+                                                <div className='flex flex-col gap-2'>
+                                                    <h1>
+                                                        Now At
+                                                        <span className='text-red-600 font-black text-xl bg-white p-1 mx-2 rounded-md'>
+                                                            <span className='font-normal text-xl ml-1 '>₹</span>
+                                                            3,999
+                                                        </span>
+                                                        <span className='line-through text-gray-300 text-sm ml-1'>
+                                                            ₹ 5,999
+                                                        </span>
+                                                    </h1>
+                                                    <h1 className='self-start font-bold'>
+                                                        For Single student
+                                                    </h1>
+                                                </div>
+                                                <span className='text-blue-500 font-bold '>33% off</span>
+                                            </div>
+                                            <div className="text-white bg-black bg-opacity-20 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-normal rounded-lg text-sm sm:px-5 px-1 py-2.5 text-center flex xs:flex-row flex-col justify-around xs:gap-12 gap-3 items-center">
+                                                <div className='flex flex-col gap-2'>
+                                                    <h1>
+                                                        Now At
+                                                        <span className='text-red-600 font-black text-xl bg-white p-1 mx-2 rounded-md'>
+                                                            <span className='font-normal text-xl ml-1 '>₹</span>
+                                                            9,999
+                                                        </span>
+                                                        <span className='line-through text-gray-300 text-sm ml-1'>
+                                                            ₹ 11,999
+                                                        </span>
+                                                    </h1>
+                                                    <h1 className='self-start font-bold'>
+                                                        For three student <br></br> <br></br>
+                                                    </h1>
+                                                    <span className='animate-pulse text-red-500 border-2 p-1 bg-white font-bold rounded-lg'>special offer</span>
+                                                </div>
                                                 <span className='text-blue-500 font-bold '>33% off</span>
                                             </div>
                                             <Link href="/registration"
