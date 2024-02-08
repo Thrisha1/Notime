@@ -23,6 +23,7 @@ export async function getStaticProps() {
         url
       }
     },
+    commingsoon
   }`;
 
   try {
