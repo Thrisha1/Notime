@@ -68,5 +68,12 @@ export const course = {
                 },
             ],
         },
+        // here comming soon initial value is true
+        {
+            name: 'commingsoon',
+            title: 'Comming Soon',
+            type: 'boolean',
+            initialValue: true,
+        },
     ],
 };

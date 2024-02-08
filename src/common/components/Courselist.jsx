@@ -1,10 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { courseNameAdd } from "../../../redux/slices/courseRegister";
-
 
 function Courselist({ courseData }) {
   const router = useRouter();
@@ -12,18 +11,19 @@ function Courselist({ courseData }) {
   const data = useSelector((state) => state.register.value);
   const dispatch = useDispatch();
 
-    const [courseName, setCourseName] = useState("");
-    const arryobj = [{
-        courseName: "courseName",
-        price: "500",
-        courseImage: "url"
+  const [courseName, setCourseName] = useState("");
+  const arryobj = [
+    {
+      courseName: "courseName",
+      price: "500",
+      courseImage: "url",
     },
-        {
-            courseName: "courseName",
-            price: "500",
-            courseImage: "url"
-        },
-    ]
+    {
+      courseName: "courseName",
+      price: "500",
+      courseImage: "url",
+    },
+  ];
   return (
     <div className="w-full overflow-x-hidden px-6 flex flex-col gap-5 xs:gap-0 xs:flex-row justify-start py-4  items-center  rounded-3xl bg-transparent bg-white xs:h-52 md:h-60 bg-opacity-[20%] ">
       <Image
@@ -37,12 +37,19 @@ function Courselist({ courseData }) {
         <p className="text-lg md:text-xl font-semibold tracking-widest text-wrap">
           {courseData.title}
         </p>
-        <p className="text-xs md:text-sm xs:text-left text-center text-wrap">{courseData.description}</p>
+        <p className="text-xs md:text-sm xs:text-left text-center text-wrap">
+          {courseData.description}
+        </p>
+        {courseData.commingsoon ? (
+          <button className="className={` bg-white text-center text-black w-24 text-xs md:text-normal md:w-32  py-2 rounded-lg tracking-widest`}">
+            Coming Soon
+          </button>
+        ) : (
           <div className="flex xs:flex-row flex-col gap-4">
             <button
               onClick={() => {
                 dispatch(courseNameAdd(courseData.title));
-                localStorage.setItem('courseName', courseData.title);
+                localStorage.setItem("courseName", courseData.title);
                 router.push("/registration");
               }}
               className={` bg-white text-center text-black w-24 text-xs md:text-normal md:w-32  py-2 rounded-lg tracking-widest`}
@@ -51,13 +58,14 @@ function Courselist({ courseData }) {
             </button>
             <button
               onClick={() => {
-                router.push(`/courses/${courseData.slug.current}`)
+                router.push(`/courses/${courseData.slug.current}`);
               }}
               className={` bg-white text-center text-black w-24 text-xs md:text-normal md:w-32  py-2 rounded-lg tracking-widest`}
             >
               Know More
             </button>
           </div>
+        )}
       </div>
     </div>
   );
