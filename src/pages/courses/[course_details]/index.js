@@ -208,7 +208,7 @@ const Index = ({ course }) => {
                                             <div className="text-white bg-black bg-opacity-20 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-normal rounded-lg text-sm sm:px-5 px-1 py-2.5 text-center flex xs:flex-row flex-col justify-around xs:gap-12 gap-3 items-center">
                                                 <div className='flex flex-col gap-2'>
                                                     <h1>
-                                                        Now At
+                                                        Now for
                                                         <span className='text-red-600 font-black text-xl bg-white p-1 mx-2 rounded-md'>
                                                             <span className='font-normal text-xl ml-1 '>₹</span>
                                                             9,999
