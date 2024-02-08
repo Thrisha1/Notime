@@ -20,7 +20,7 @@ class AppDocument extends Document {
     return (
       <Html>
         <Head>
-        <script>
+        {/* <script>
             {`
               window.embeddedChatbotConfig = {
                 chatbotId: process.env.CHATBOT_ID,
@@ -33,7 +33,8 @@ class AppDocument extends Document {
             chatbotId="My4J6sb8cbXqIFZmPkrMO"
             domain="www.chatbase.co"
             defer
-          ></script>
+          ></script> */}
+          <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
         </Head>
         <body>
           <Main />

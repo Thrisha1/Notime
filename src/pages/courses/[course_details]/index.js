@@ -60,7 +60,7 @@ const Index = ({ course }) => {
     const [remainingTime, setRemainingTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
     useEffect(() => {
-        const registrationEndTime = new Date("2024-02-10T23:59:59"); // Replace with your actual registration end time
+        const registrationEndTime = new Date("2024-02-01T23:59:59"); // Replace with your actual registration end time
         const interval = setInterval(() => {
             const currentTime = new Date();
             const timeDifference = registrationEndTime - currentTime;
@@ -203,7 +203,7 @@ const Index = ({ course }) => {
                                             <Link href="/registration"
                                                 className="text-white bg-blue-700 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Enroll Now</Link>
                                             <span className='text-center text-sm'>
-                                                Register Now and pay before February 10th 2024
+                                                Register Now and pay before February 2nd 2024
                                             </span>
                                             <span className="text-md text-center text-gray-300">Registration ends in <br></br><br></br>
                                                 <div className='flex flex-wrap justify-center gap-4 font-bold' >
@@ -273,6 +273,7 @@ const Index = ({ course }) => {
                     </div>
                 </div>
             )}
+            <div class="elfsight-app-23d65287-a86c-4878-af2e-5af8e862c6aa" data-elfsight-app-lazy></div>
         </div>
     )
 }
