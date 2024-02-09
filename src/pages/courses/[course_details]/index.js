@@ -225,7 +225,7 @@ const Index = ({ course }) => {
                                                 <span className='text-blue-500 font-bold '>33% off</span>
                                             </div>
                                             <Link href="/registration"
-                                                className="text-white bg-blue-700 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Enroll Now</Link>
+                                                className="text-white bg-blue-700 hover: focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Enroll Now for free</Link>
                                             <span className='text-center text-sm'>
                                                 Register Now and pay before February 10th 2024
                                             </span>
